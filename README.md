@@ -11,4 +11,4 @@
 
 ## Rendered specification
 
-[Rendered specification](../blob/gh-pages/index.txt)
+[Rendered specification](../gh-pages/index.txt)
