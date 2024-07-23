@@ -11,12 +11,12 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
 category="std" ipr="trust200902" consensus="true"
-docName="draft-ietf-avtcore-rtp-j2k-scl-02" xml:lang="en" version="3">
+docName="draft-ietf-avtcore-rtp-j2k-scl-03" xml:lang="en" version="3">
   <front>
     <title abbrev="Sub-codestream latency J2K over RTP">RTP Payload Format for
     sub-codestream latency JPEG 2000 streaming</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-ietf-avtcore-rtp-j2k-scl-02"/>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-avtcore-rtp-j2k-scl-03"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
 
@@ -1403,10 +1403,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
     <section anchor="sec-iana">
       <name>IANA Considerations</name>
         <t>This memo requests that IANA registers the content type specified at
-        <xref target="sec-media-type"/>.  The media type is also requested to be
-        added to the IANA registry for <eref
-        target="http://www.iana.org/assignments/rtp-parameters">RTP Payload
-        Format MIME types</eref>.</t>
+        <xref target="sec-media-type"/>.</t>
     </section>
 
     <section anchor="sec-sec">
@@ -1749,6 +1746,15 @@ Packets |        Main         | Body | ... |    Body   | Main ...
           <li>Removed signalling for the transmission of multi-tile images as
           multiple single-tile image streams (the <tt>tile</tt> media type
           parameter).</li>
+        </ul>
+			</section>
+
+      <section anchor="sec-soc-draft-ietf-avtcore-rtp-j2k-scl-02">
+				<name>Changes from <tt>draft-ietf-avtcore-rtp-j2k-scl-02</tt></name>
+
+        <ul>
+          <li>Removed request for registration in the deprectated IANA registry
+          for RTP Payload Format MIME types.</li>
         </ul>
 			</section>
     </section>
