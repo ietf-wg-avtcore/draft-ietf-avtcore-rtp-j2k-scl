@@ -11,12 +11,12 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
 category="std" ipr="trust200902" consensus="true"
-docName="draft-ietf-avtcore-rtp-j2k-scl-03" xml:lang="en" version="3">
+docName="draft-ietf-avtcore-rtp-j2k-scl-04" xml:lang="en" version="3">
   <front>
     <title abbrev="Sub-codestream latency J2K over RTP">RTP Payload Format for
     sub-codestream latency JPEG 2000 streaming</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-ietf-avtcore-rtp-j2k-scl-03"/>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-avtcore-rtp-j2k-scl-04"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
 
@@ -530,7 +530,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
           <dt anchor="def-ESEQ">ESEQ (Extended Sequence Number)</dt>
           <dd>
             <t>The high order bits of the RTP sequence number.</t>
-            <t><xref target="def-seq"/> specifies the The low-order bits of the
+            <t><xref target="def-seq"/> specifies the low-order bits of the
             RTP sequence number and the formula to compute the RTP sequence
             number</t>
           </dd>
@@ -989,7 +989,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
             <tr>
               <th>Decomposition level</th>
               <th>Resolution level</th>
-              <th>Subbands</th>
+              <th>Sub-bands</th>
               <th>Keep all Body Packets with RES equal to or less than this
               value...</th>
               <th>... to decode an image with at most these dimensions</th>
@@ -1081,7 +1081,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
             <tr>
               <th>Decomposition level</th>
               <th>Resolution level</th>
-              <th>Subbands</th>
+              <th>Sub-bands</th>
               <th>Keep all Body Packets with RES equal to or less than this
               value...</th>
               <th>... to decode an image with at most these dimensions</th>
@@ -1743,7 +1743,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
 				<name>Changes from <tt>draft-ietf-avtcore-rtp-j2k-scl-01</tt></name>
 
         <ul>
-          <li>Removed signalling for the transmission of multi-tile images as
+          <li>Removed signaling for the transmission of multi-tile images as
           multiple single-tile image streams (the <tt>tile</tt> media type
           parameter).</li>
         </ul>
@@ -1753,7 +1753,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
 				<name>Changes from <tt>draft-ietf-avtcore-rtp-j2k-scl-02</tt></name>
 
         <ul>
-          <li>Removed request for registration in the deprectated IANA registry
+          <li>Removed request for registration in the deprecated IANA registry
           for RTP Payload Format MIME types.</li>
         </ul>
 			</section>
