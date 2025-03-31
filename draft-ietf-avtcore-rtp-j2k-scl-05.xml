@@ -478,7 +478,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
                 contains one or more resync points.</dd>
               </dl>
 
-              <t><tt>ORDH</tt> MUST be 0 is the codestream consists of more than
+              <t><tt>ORDH</tt> MUST be 0 if the codestream consists of more than
               one tile.</t>
 
               <t>NOTE: Only <tt>ORDH</tt> = 4 and <tt>ORDH</tt> = 6 allow
