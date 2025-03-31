@@ -64,8 +64,14 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-05" xml:lang="en" version="3">
   <middle>
     <section>
       <name>Introduction</name>
-      <t>This RTP payload format specifies the streaming of a video signal
-      encoded as a sequence of JPEG 2000 codestreams.</t>
+      <t>The real-time transport protocol (RTP), which is specified in <xref
+      target="RFC3550"/>, provides end-to-end network transport functions for
+      transmitting real-time data, but does not define the characteristics of
+      the data itself (the payload), which varies across applications and is
+      defined in companion RTP payload format documents.</t>
+
+      <t>This RTP payload format document specifies the streaming of a video
+      signal encoded as a sequence of JPEG 2000 codestreams.</t>
 
       <t>In addition to supporting a variety of frame scanning techniques
       (progressive, interlaced and progressive segmented frame) and image
