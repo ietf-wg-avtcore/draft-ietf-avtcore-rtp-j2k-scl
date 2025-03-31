@@ -842,9 +842,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         <name>RTP Packet filtering</name>
         <t>A network agent MAY strip out RTP Packet from a codestream that are
         of no interest to a particular client, e.g., based on a resolution or a
-        spatial region of interest. Such a network agent SHOULD include a CSRC
-        identifier to identify the SSRC field of the original source from which
-        content was stripped.</t>
+        spatial region of interest.</t>
       </section>
 
       <section>
