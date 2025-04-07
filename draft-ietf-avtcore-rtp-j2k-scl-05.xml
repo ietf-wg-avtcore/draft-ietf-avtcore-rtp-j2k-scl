@@ -70,8 +70,10 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-05" xml:lang="en" version="3">
       the data itself (the payload), which varies across applications and is
       defined in companion RTP payload format documents.</t>
 
-      <t>This RTP payload format document specifies the streaming of a video
-      signal encoded as a sequence of JPEG 2000 codestreams.</t>
+      <t>This RTP payload format specifies the streaming of a video signal
+      encoded as a sequence of JPEG 2000 codestreams (see <xref
+      target="sec-media-description"/> for a primer on the structure of JPEG
+      2000 codestreams).</t>
 
       <t>In addition to supporting a variety of frame scanning techniques
       (progressive, interlaced and progressive segmented frame) and image
@@ -128,7 +130,7 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-05" xml:lang="en" version="3">
       they appear in all capitals, as shown here.</t>
     </section>
 
-    <section>
+    <section anchor="sec-media-description">
       <name>Media format description</name>
       <t>The following summarizes the structure of the JPEG 2000 codestream,
       which is specified in detail at <xref target="jpeg2000-1"/>.</t>
@@ -281,9 +283,6 @@ Packets |        Main         | Body | ... |    Body   | Main ...
 
         <t>NOTE: Padding bytes can be used to achieve constant bit rate
         transmission.</t>
-
-        <t> A JPEG 2000 codestream consists of the bytes between, and including,
-        the SOC and EOC markers, as defined in <xref target="jpeg2000-1"/>.</t>
 
         <t>A JPEG 2000 codestream fragment does not necessarily contain complete
         JPEG 2000 packets, as defined in <xref target="jpeg2000-1"/>.</t>
@@ -789,9 +788,12 @@ Packets |        Main         | Body | ... |    Body   | Main ...
     </section>
 
     <section anchor="sec-codestream">
-      <name>JPEG 2000 codestream requirements</name>
+      <name>JPEG 2000 codestream</name>
       <section>
         <name>General</name>
+        <t> A JPEG 2000 codestream consists of the bytes between, and including,
+        the SOC and EOC markers, as defined in <xref target="jpeg2000-1"/>.</t>
+
         <t>The JPEG 2000 codestream MAY include capabilities beyond those
         specified at <xref target="jpeg2000-1"/>, including those specified in
         <xref target="jpeg2000-2"/> and <xref target="jpeg2000-15"/>.</t>
