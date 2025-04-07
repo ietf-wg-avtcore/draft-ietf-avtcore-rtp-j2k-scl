@@ -64,6 +64,12 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-05" xml:lang="en" version="3">
   <middle>
     <section>
       <name>Introduction</name>
+      <t>The real-time transport protocol (RTP), which is specified in <xref
+      target="RFC3550"/>, provides end-to-end network transport functions for
+      transmitting real-time data, but does not define the characteristics of
+      the data itself (the payload), which varies across applications and is
+      defined in companion RTP payload format documents.</t>
+
       <t>This RTP payload format specifies the streaming of a video signal
       encoded as a sequence of JPEG 2000 codestreams (see <xref
       target="sec-media-description"/> for a primer on the structure of JPEG
@@ -477,7 +483,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
                 contains one or more resync points.</dd>
               </dl>
 
-              <t><tt>ORDH</tt> MUST be 0 is the codestream consists of more than
+              <t><tt>ORDH</tt> MUST be 0 if the codestream consists of more than
               one tile.</t>
 
               <t>NOTE: Only <tt>ORDH</tt> = 4 and <tt>ORDH</tt> = 6 allow
@@ -844,9 +850,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         <name>RTP Packet filtering</name>
         <t>A network agent MAY strip out RTP Packet from a codestream that are
         of no interest to a particular client, e.g., based on a resolution or a
-        spatial region of interest. Such a network agent SHOULD include a CSRC
-        identifier to identify the SSRC field of the original source from which
-        content was stripped.</t>
+        spatial region of interest.</t>
       </section>
 
       <section>
@@ -878,9 +882,8 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         produce the 32-bit <tt>timestamp</tt> field in the RTP fixed header.
         Specifically, a sender maintains, at least conceptually, a 32-bit
         counter that is incremented by a 90kHz clock. The counter is sampled at
-        the point when each RTP Packet is or SHOULD be at least notionally
-        transmitted and the 12 LSBs of the sample are stored in the
-        <tt>PTSTAMP</tt> field.</t>
+        the point in time when each RTP Packet is transmitted and the 12 LSBs of
+        the sample are stored in the <tt>PTSTAMP</tt> field.</t>
 
         <t>If <tt>P</tt> = 1, then the transmission time <tt>TOFF</tt> (as
         defined at <xref target="def-PTSTAMP"></xref>) for two consecutive RTP
