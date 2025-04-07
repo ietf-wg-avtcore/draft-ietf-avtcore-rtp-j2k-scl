@@ -929,9 +929,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
    PTSTAMP can be derived from the same clock that is used to produce
    the 32-bit timestamp field in the RTP fixed header.  Specifically, a
    sender maintains, at least conceptually, a 32-bit counter that is
-   incremented by a 90kHz clock.  The counter is sampled at the point
-   when each RTP Packet is or SHOULD be at least notionally transmitted
-   and the 12 LSBs of the sample are stored in the PTSTAMP field.
+   incremented by a 90kHz clock.  The counter is sampled at the point in
+   time when each RTP Packet is transmitted and the 12 LSBs of the
+   sample are stored in the PTSTAMP field.
 
    If P = 1, then the transmission time TOFF (as defined at Section 5.3)
    for two consecutive RTP packets with identical timestamp fields MUST
