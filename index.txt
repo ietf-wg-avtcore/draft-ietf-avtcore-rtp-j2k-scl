@@ -64,7 +64,7 @@ Table of Contents
    2.  Requirements Language . . . . . . . . . . . . . . . . . . . .   4
    3.  Media format description  . . . . . . . . . . . . . . . . . .   4
    4.  Video signal description  . . . . . . . . . . . . . . . . . .   5
-   5.  Payload Format  . . . . . . . . . . . . . . . . . . . . . . .   5
+   5.  Payload Format  . . . . . . . . . . . . . . . . . . . . . . .   6
      5.1.  General . . . . . . . . . . . . . . . . . . . . . . . . .   6
      5.2.  RTP Fixed Header Usage  . . . . . . . . . . . . . . . . .   7
      5.3.  Main Packet Payload Header  . . . . . . . . . . . . . . .   8
@@ -118,8 +118,14 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 1.  Introduction
 
-   This RTP payload format specifies the streaming of a video signal
-   encoded as a sequence of JPEG 2000 codestreams.
+   The real-time transport protocol (RTP), which is specified in
+   [RFC3550], provides end-to-end network transport functions for
+   transmitting real-time data, but does not define the characteristics
+   of the data itself (the payload), which varies across applications
+   and is defined in companion RTP payload format documents.
+
+   This RTP payload format document specifies the streaming of a video
+   signal encoded as a sequence of JPEG 2000 codestreams.
 
    In addition to supporting a variety of frame scanning techniques
    (progressive, interlaced and progressive segmented frame) and image
@@ -153,12 +159,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
       where the round-trip time is greater than the roll over period
       (0.5 seconds in this example).
 
-   *  the payload header optionally contains a temporal offset (PTSTAMP)
-      relative to the first RTP Packet with the same value of RTP
-      timestamp field (Section 5.2).  The higher resolution of PTSTAMP
-      compared to the timestamp allows receivers to recover the sender's
-      clock more rapidly.
-
 
 
 
@@ -169,6 +169,12 @@ Lemieux & Taubman        Expires 9 October 2025                 [Page 3]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+   *  the payload header optionally contains a temporal offset (PTSTAMP)
+      relative to the first RTP Packet with the same value of RTP
+      timestamp field (Section 5.2).  The higher resolution of PTSTAMP
+      compared to the timestamp allows receivers to recover the sender's
+      clock more rapidly.
 
    Finally, the payload format also makes use of the unique scalability
    features of JPEG 2000 to allow a network agent or recipient to
@@ -212,12 +218,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
    The rest of the codestream consists of additional marker segments
    (tile-part headers) interleaved with coded image data.
 
-   The coded image data ultimately consists of code-blocks, each
-   containing coded samples belonging to a rectangular (spatial) region
-   within one resolution level of one component.  Code-blocks are
-   further collected into precincts, which, accordingly, represents
-   code-blocks belonging to a spatial region within one resolution level
-   of one component.
 
 
 
@@ -225,6 +225,13 @@ Lemieux & Taubman        Expires 9 October 2025                 [Page 4]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+   The coded image data ultimately consists of code-blocks, each
+   containing coded samples belonging to a rectangular (spatial) region
+   within one resolution level of one component.  Code-blocks are
+   further collected into precincts, which, accordingly, represents
+   code-blocks belonging to a spatial region within one resolution level
+   of one component.
 
    The image coded data can be arranged into several progression orders,
    which dictates which aspect of the image appears first in the
@@ -264,6 +271,17 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
       1 occurs temporarily before Field 2.  The height in lines of each
       field is half the height of the image.
 
+
+
+
+
+
+
+Lemieux & Taubman        Expires 9 October 2025                 [Page 5]
+
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
+
+
    *  Progressive segmented frame (PsF), where each frame consists of
       two segments.  Segment 1 contains the odd lines (1, 3, 5, 7,...)
       of a frame and Segment 2 contains the even lines (2, 4, 6, 8,...)
@@ -273,14 +291,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
    All frames are scanned left to right, top to bottom.
 
 5.  Payload Format
-
-
-
-
-Lemieux & Taubman        Expires 9 October 2025                 [Page 5]
-
-Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
-
 
 5.1.  General
 
@@ -321,22 +331,18 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
    A Body Packet consists of the following ordered sequence of
    structures concatenated without gaps:
 
-   *  the RTP Fixed Header;
-
-   *  a Body Packet Payload Header, as specified at Section 5.4; and
-
-   *  the payload, which consists of a JPEG 2000 codestream fragment.
-
-
-
-
-
 
 
 Lemieux & Taubman        Expires 9 October 2025                 [Page 6]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+   *  the RTP Fixed Header;
+
+   *  a Body Packet Payload Header, as specified at Section 5.4; and
+
+   *  the payload, which consists of a JPEG 2000 codestream fragment.
 
    When concatenated, the sequence of JPEG 2000 codestream fragments
    emitted by the sender MUST be a sequence of JPEG 2000 codestreams
@@ -380,12 +386,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
       0  Otherwise
 
    timestamp
-      The timestamp is the presentation time of the image to which the
-      payload belongs.
-
-      The timestamp clock rate is 90 kHz.
-
-
 
 
 
@@ -393,6 +393,11 @@ Lemieux & Taubman        Expires 9 October 2025                 [Page 7]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+      The timestamp is the presentation time of the image to which the
+      payload belongs.
+
+      The timestamp clock rate is 90 kHz.
 
       The timestamp of successive progressive frames MUST advance at
       regular increments based on the instantaneous video frame rate.
@@ -438,17 +443,16 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
            Figure 2: Structure of the Main Packet Payload Header
 
-   MH (Codestream Main Header Presence)
-      0 
-         The RTP Packet is a Body Packet.
-
-
 
 
 Lemieux & Taubman        Expires 9 October 2025                 [Page 8]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+   MH (Codestream Main Header Presence)
+      0 
+         The RTP Packet is a Body Packet.
 
       1 
          The RTP Packet is a Main Packet and the codestream has more
@@ -493,10 +497,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
          Segment 2 of a progressive segmented frame, where the first
          line of the image is the second line of the frame.
 
-      7 
-         Extension value.  See Section 8.6 and Section 7.8.
-
-   ORDH (Progression Order [Main Packet])
 
 
 
@@ -506,6 +506,10 @@ Lemieux & Taubman        Expires 9 October 2025                 [Page 9]
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
+      7 
+         Extension value.  See Section 8.6 and Section 7.8.
+
+   ORDH (Progression Order [Main Packet])
       Specifies the progression order used by the codestream and whether
       resync points are signaled.
 
@@ -550,10 +554,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
       ORDH MUST be 0 if the codestream consists of more than one tile.
 
-      NOTE: Only ORDH = 4 and ORDH = 6 allow sub-codestream latency
-      streaming.
-
-
 
 
 
@@ -561,6 +561,9 @@ Lemieux & Taubman        Expires 9 October 2025                [Page 10]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+      NOTE: Only ORDH = 4 and ORDH = 6 allow sub-codestream latency
+      streaming.
 
       NOTE: Progression order PRCL is defined in [jpeg2000-2].  The
       other progression orders are specified in [jpeg2000-1].
@@ -606,9 +609,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
       can be reused across codestreams.
 
       1 
-         All Main Packets in this stream, as identified by its SSRC
-         value:
-
 
 
 
@@ -617,6 +617,9 @@ Lemieux & Taubman        Expires 9 October 2025                [Page 11]
 
 Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
+
+         All Main Packets in this stream, as identified by its SSRC
+         value:
 
          *  MUST have identical Main Packet Payload Headers, with the
             exception of their TP, MH, ESEQ and PTSTAMP fields;
@@ -643,9 +646,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
          The codestream components MUST conform to one of the
          combinations at Table 1.
-
-
-
 
 
 
