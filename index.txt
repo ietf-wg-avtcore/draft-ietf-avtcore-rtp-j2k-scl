@@ -548,7 +548,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
          resync point is specified in every Body Packet that contains
          one or more resync points.
 
-      ORDH MUST be 0 is the codestream consists of more than one tile.
+      ORDH MUST be 0 if the codestream consists of more than one tile.
 
       NOTE: Only ORDH = 4 and ORDH = 6 allow sub-codestream latency
       streaming.
