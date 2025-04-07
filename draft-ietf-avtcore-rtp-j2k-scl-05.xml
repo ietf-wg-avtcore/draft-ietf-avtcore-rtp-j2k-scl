@@ -874,9 +874,8 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         produce the 32-bit <tt>timestamp</tt> field in the RTP fixed header.
         Specifically, a sender maintains, at least conceptually, a 32-bit
         counter that is incremented by a 90kHz clock. The counter is sampled at
-        the point when each RTP Packet is or SHOULD be at least notionally
-        transmitted and the 12 LSBs of the sample are stored in the
-        <tt>PTSTAMP</tt> field.</t>
+        the point in time when each RTP Packet is transmitted and the 12 LSBs of
+        the sample are stored in the <tt>PTSTAMP</tt> field.</t>
 
         <t>If <tt>P</tt> = 1, then the transmission time <tt>TOFF</tt> (as
         defined at <xref target="def-PTSTAMP"></xref>) for two consecutive RTP
