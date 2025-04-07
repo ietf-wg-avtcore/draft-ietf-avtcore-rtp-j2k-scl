@@ -5,8 +5,8 @@
 Audio/Video Transport Core Maintenance                P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
 Intended status: Standards Track                           D. S. Taubman
-Expires: 2 October 2025                    University of New South Wales
-                                                           31 March 2025
+Expires: 9 October 2025                    University of New South Wales
+                                                            7 April 2025
 
 
    RTP Payload Format for sub-codestream latency JPEG 2000 streaming
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 October 2025.
+   This Internet-Draft will expire on 9 October 2025.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 1]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 1]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 2]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 2]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  33
@@ -165,9 +165,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 3]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 3]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    Finally, the payload format also makes use of the unique scalability
@@ -221,9 +221,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 4]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 4]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    The image coded data can be arranged into several progression orders,
@@ -277,9 +277,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 5]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 5]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
 5.1.  General
@@ -333,9 +333,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 6]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 6]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    When concatenated, the sequence of JPEG 2000 codestream fragments
@@ -389,9 +389,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 7]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 7]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
       The timestamp of successive progressive frames MUST advance at
@@ -445,9 +445,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 8]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 8]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
       1 
@@ -501,9 +501,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                 [Page 9]
+Lemieux & Taubman        Expires 9 October 2025                 [Page 9]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
       Specifies the progression order used by the codestream and whether
@@ -557,9 +557,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 10]
+Lemieux & Taubman        Expires 9 October 2025                [Page 10]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
       NOTE: Progression order PRCL is defined in [jpeg2000-2].  The
@@ -613,9 +613,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 11]
+Lemieux & Taubman        Expires 9 October 2025                [Page 11]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
          *  MUST have identical Main Packet Payload Headers, with the
@@ -669,9 +669,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 12]
+Lemieux & Taubman        Expires 9 October 2025                [Page 12]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
            +===================================+====================+
@@ -725,9 +725,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 13]
+Lemieux & Taubman        Expires 9 October 2025                [Page 13]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    TRANS (Transfer Characteristics)
@@ -781,9 +781,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 14]
+Lemieux & Taubman        Expires 9 October 2025                [Page 14]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
       1 
@@ -837,9 +837,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 15]
+Lemieux & Taubman        Expires 9 October 2025                [Page 15]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
 6.  JPEG 2000 codestream requirements
@@ -893,18 +893,16 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 16]
+Lemieux & Taubman        Expires 9 October 2025                [Page 16]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
 7.2.  RTP Packet filtering
 
    A network agent MAY strip out RTP Packet from a codestream that are
    of no interest to a particular client, e.g., based on a resolution or
-   a spatial region of interest.  Such a network agent SHOULD include a
-   CSRC identifier to identify the SSRC field of the original source
-   from which content was stripped.
+   a spatial region of interest.
 
 7.3.  Resync point
 
@@ -949,9 +947,11 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 17]
+
+
+Lemieux & Taubman        Expires 9 October 2025                [Page 17]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
 7.6.  Extra information
@@ -1005,9 +1005,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 18]
+Lemieux & Taubman        Expires 9 October 2025                [Page 18]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    NOTE: the last condition allows the encoder to insert padding bytes
@@ -1061,9 +1061,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 19]
+Lemieux & Taubman        Expires 9 October 2025                [Page 19]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    +===============+============+=============+===========+============+
@@ -1117,9 +1117,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 20]
+Lemieux & Taubman        Expires 9 October 2025                [Page 20]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    The decoding process reconstructs the image by reversing the coding
@@ -1173,9 +1173,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 21]
+Lemieux & Taubman        Expires 9 October 2025                [Page 21]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    +===============+============+=============+===========+============+
@@ -1229,9 +1229,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 22]
+Lemieux & Taubman        Expires 9 October 2025                [Page 22]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    Future edition of this specification can specify XTRAB contents such
@@ -1285,9 +1285,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 23]
+Lemieux & Taubman        Expires 9 October 2025                [Page 23]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
 9.2.  Definition
@@ -1341,9 +1341,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 24]
+Lemieux & Taubman        Expires 9 October 2025                [Page 24]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
       width
@@ -1397,9 +1397,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 25]
+Lemieux & Taubman        Expires 9 October 2025                [Page 25]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
          The application that defines the absolute-URI MUST associate it
@@ -1453,9 +1453,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 26]
+Lemieux & Taubman        Expires 9 October 2025                [Page 26]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    Change controller
@@ -1509,9 +1509,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 27]
+Lemieux & Taubman        Expires 9 October 2025                [Page 27]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    [jpeg2000-2]
@@ -1565,9 +1565,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 28]
+Lemieux & Taubman        Expires 9 October 2025                [Page 28]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
@@ -1621,9 +1621,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 29]
+Lemieux & Taubman        Expires 9 October 2025                [Page 29]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    [RFC7202]  Perkins, C. and M. Westerlund, "Securing the RTP
@@ -1677,9 +1677,9 @@ Appendix A.  Pixel formats
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 30]
+Lemieux & Taubman        Expires 9 October 2025                [Page 30]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    Each pixel format is characterized by the following:
@@ -1733,9 +1733,9 @@ Appendix B.  Signal formats
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 31]
+Lemieux & Taubman        Expires 9 October 2025                [Page 31]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    tff
@@ -1789,9 +1789,9 @@ D.4.  Changes from draft-ietf-avtcore-rtp-j2k-scl-02
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 32]
+Lemieux & Taubman        Expires 9 October 2025                [Page 32]
 
-Internet-Draft     Sub-codestream latency J2K over RTP        March 2025
+Internet-Draft     Sub-codestream latency J2K over RTP        April 2025
 
 
    *  Removed request for registration in the deprecated IANA registry
@@ -1845,4 +1845,4 @@ Authors' Addresses
 
 
 
-Lemieux & Taubman        Expires 2 October 2025                [Page 33]
+Lemieux & Taubman        Expires 9 October 2025                [Page 33]
