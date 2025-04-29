@@ -116,9 +116,9 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
 
       <t>Finally, the payload format also makes use of the unique scalability
       features of JPEG 2000 to allow a network agent or recipient to discard
-      resolutions and/or quality layers merely by inspecting payload headers
-      (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to parse the
-      underlying codestream.</t>
+      resolutions levels and/or quality layers merely by inspecting payload
+      headers (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to parse
+      the underlying codestream.</t>
     </section>
 
     <section>
@@ -140,10 +140,15 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       of standards, including those specified in <xref target="jpeg2000-2"/> and
       <xref target="jpeg2000-15"/>.</t>
 
-      <t>JPEG 2000 represents an image as one or more components, e.g., R, G and
-      B, each uniformly sampled on a common rectangular reference grid. An image
-      can be further divided into contiguous rectangular tiles that are each
-      independently coded and decoded.</t>
+      <t>JPEG 2000 represents an image as one or more components, each uniformly
+      sampled on a common rectangular reference grid. For example, an image can
+      consist of the customary Y (luma), C<sub>b</sub> (blue-difference chroma),
+      and C<sub>r</sub> (red-difference chroma) components, with the
+      C<sub>b</sub> and C<sub>r</sub> being sub-sampled by a factor of two
+      compared to the Y component.</t>
+
+      <t>An image can be further divided into contiguous rectangular tiles that
+      are each independently coded and decoded.</t>
 
       <t>JPEG 2000 codes each image as a standalone codestream. Each codestream
       consists of (i) marker segments, which contain coding parameters and
@@ -157,6 +162,12 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
 
       <t>The rest of the codestream consists of additional marker segments
       (tile-part headers) interleaved with coded image data.</t>
+
+      <t>At the heart of JPEG 2000 coding is the wavelet transform, which
+      decomposes the image into successive resolution levels, with each level
+      related to the next one by a spatial factor of two, i.e., each
+      successive resolution level has half the horizontal and half the vertical
+      resolution of the previous one.</t>
 
       <t>The coded image data ultimately consists of code-blocks, each
       containing coded samples belonging to a rectangular (spatial) region
@@ -177,7 +188,7 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
         <dt>Component (C)</dt>
         <dd>The first component of the image come before the last component of
         the image.</dd>
-        <dt>Resolution Layer (R)</dt>
+        <dt>Resolution Level (R)</dt>
         <dd>The information needed to reconstruct the lower spatial resolutions
         of the image come before the information needed to reconstruct the
         higher spatial resolutions of the image.</dd>
@@ -704,11 +715,11 @@ Packets |        Main         | Body | ... |    Body   | Main ...
           <dt>TP</dt>
           <dd>See <xref target="def-TP"/>.</dd>
 
-          <dt anchor="def-RES">RES (Resolution Layers)</dt>
+          <dt anchor="def-RES">RES (Resolution Levels)</dt>
           <dd>
             <dl newline="true">
               <dt>0</dt>
-              <dd>The payload can contribute to all resolution layers.</dd>
+              <dd>The payload can contribute to all resolution levels.</dd>
 
               <dt>Otherwise</dt>
               <dd>The payload contains at least one byte of one JPEG 2000 packet
