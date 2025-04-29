@@ -73,12 +73,21 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       <t>This RTP payload format specifies the streaming of a video signal
       encoded as a sequence of JPEG 2000 codestreams (see <xref
       target="sec-media-description"/> for a primer on the structure of JPEG
-      2000 codestreams).</t>
+      2000 codestreams). JPEG 2000 is a flexible image codec that support
+      resolution and quality scalability, lossy to lossless coding,
+      non-iterative optimal rate control, and high-dynamic range, multi-channel
+      and sub-sampled images. These features have made it a mainstay in
+      high-performance applications, including medical geo-spatial, archival,
+      cinema, studio post-production and TV production.</t>
 
       <t>In addition to supporting a variety of frame scanning techniques
       (progressive, interlaced and progressive segmented frame) and image
-      characteristics, the payload format includes the following features
-      specifically designed for streaming applications:</t>
+      characteristics, the payload format supports real-time image transmission
+      (live streaming), where image content is encoded, transmitted and decoded
+      continuously as it is being produced and with minimal latency. Target
+      applications include real-time TV production over IP (<xref
+      target="ov2110-0"/>), remote presence, surveillance, etc.
+      Specifically:</t>
 
       <ul>
         <li>the payload format allows sub-codestream latency such that the first
@@ -114,11 +123,22 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
         allows receivers to recover the sender's clock more rapidly.</li>
       </ul>
 
+      <t>In addition to support for sub-codestream latency and high-precision
+      sender clock recovery, the payload format improves on <xref
+      target="RFC5371"/> by supporting:</t>
+      <ul>
+        <li>code-block caching for screen content (see <xref
+        target="sec-send-block-caching"/>);</li>
+        <li>progressive-segmented frame (PsF) video support (see <xref
+        target="sec-signal-fmts"/>; and</li>
+        <li>explicit colorspace signaling (see <xref target="def-S"/>.</li>
+      </ul>
+
       <t>Finally, the payload format also makes use of the unique scalability
       features of JPEG 2000 to allow a network agent or recipient to discard
-      resolutions and/or quality layers merely by inspecting payload headers
+      resolutions and/or quality layers merely by inspecting RTP Packet headers
       (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to parse the
-      underlying codestream.</t>
+      underlying codestream (see <xref target="sec-filtering"/>).</t>
     </section>
 
     <section>
@@ -846,7 +866,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         </ul>
       </section>
 
-      <section>
+      <section anchor="sec-filtering">
         <name>RTP Packet filtering</name>
         <t>A network agent MAY strip out RTP Packet from a codestream that are
         of no interest to a particular client, e.g., based on a resolution or a
@@ -1508,6 +1528,16 @@ Packets |        Main         | Body | ... |    Body   | Main ...
  
       <references>
         <name>Informative References</name>
+        <reference anchor="ov2110-0">
+          <front>
+            <title abbrev="SMPTE OV 2110-0">Professional Media Over Managed IP
+            Networks — Roadmap for the 2110 Document Suite</title>
+            <author>
+              <organization>SMPTE</organization>
+            </author>
+            <date year="2018" month="12" day="04"/>
+          </front>
+        </reference>
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.5371.xml"/>
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.4175.xml"/>
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.6838.xml"/>
