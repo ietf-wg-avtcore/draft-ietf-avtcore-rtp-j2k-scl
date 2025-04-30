@@ -294,7 +294,7 @@ P = (Optional) padding bytes
         <t>A JPEG 2000 codestream Extended Header consists of the bytes between,
         and including, the SOC marker and the first SOD marker.</t>
 
-        <t>NOTE 3: The concept of JPEG 2000 codestream Extended Header is
+        <t>NOTE 2: The concept of JPEG 2000 codestream Extended Header is
         specific to this document, and is distinct from the JPEG 2000 codestream
         main header which is defined in <xref target="jpeg2000-1"/>. The
         codestream main header consists of the bytes between, and including, the
