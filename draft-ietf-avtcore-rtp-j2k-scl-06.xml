@@ -139,8 +139,7 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       resolutions levels and/or quality layers merely by inspecting RTP Packet
       headers (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to parse
       the underlying codestream (see <xref target="sec-filtering"/>).</t>
-
-</section>
+    </section>
 
     <section>
       <name>Requirements Language</name>
