@@ -73,12 +73,21 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       <t>This RTP payload format specifies the streaming of a video signal
       encoded as a sequence of JPEG 2000 codestreams (see <xref
       target="sec-media-description"/> for a primer on the structure of JPEG
-      2000 codestreams).</t>
+      2000 codestreams). JPEG 2000 is a flexible image codec that support
+      resolution and quality scalability, lossy to lossless coding,
+      non-iterative optimal rate control, and high-dynamic range, multi-channel
+      and sub-sampled images. These features have made it a mainstay in
+      high-performance applications, including medical geo-spatial, archival,
+      cinema, studio post-production and TV production.</t>
 
       <t>In addition to supporting a variety of frame scanning techniques
       (progressive, interlaced and progressive segmented frame) and image
-      characteristics, the payload format includes the following features
-      specifically designed for streaming applications:</t>
+      characteristics, the payload format supports real-time image transmission
+      (live streaming), where image content is encoded, transmitted and decoded
+      continuously as it is being produced and with minimal latency. Target
+      applications include real-time TV production over IP (<xref
+      target="ov2110-0"/>), remote presence, surveillance, etc.
+      Specifically:</t>
 
       <ul>
         <li>the payload format allows sub-codestream latency such that the first
@@ -104,8 +113,8 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
         application. For example, the standard sequence number will roll over in
         0.5 seconds with a 1-Gbps video stream with RTP Packet sizes of at least
         1000 octets, which can be a problem for detecting loss and out-of-order
-        packets particularly in instances where the round-trip time is greater
-        than the roll over period (0.5 seconds in this example).</li>
+        RTP packets particularly in instances where the round-trip time is
+        greater than the roll over period (0.5 seconds in this example).</li>
 
         <li>the payload header optionally contains a temporal offset
         (<tt>PTSTAMP</tt>) relative to the first RTP Packet with the same value
@@ -114,12 +123,24 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
         allows receivers to recover the sender's clock more rapidly.</li>
       </ul>
 
+      <t>In addition to support for sub-codestream latency and high-precision
+      sender clock recovery, the payload format improves on <xref
+      target="RFC5371"/> by supporting:</t>
+      <ul>
+        <li>code-block caching for screen content (see <xref
+        target="sec-send-block-caching"/>);</li>
+        <li>progressive-segmented frame (PsF) video support (see <xref
+        target="sec-signal-fmts"/>; and</li>
+        <li>explicit colorspace signaling (see <xref target="def-S"/>.</li>
+      </ul>
+
       <t>Finally, the payload format also makes use of the unique scalability
       features of JPEG 2000 to allow a network agent or recipient to discard
-      resolutions levels and/or quality layers merely by inspecting payload
+      resolutions levels and/or quality layers merely by inspecting RTP Packet
       headers (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to parse
-      the underlying codestream.</t>
-    </section>
+      the underlying codestream (see <xref target="sec-filtering"/>).</t>
+
+</section>
 
     <section>
       <name>Requirements Language</name>
@@ -235,24 +256,27 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
           scale).</name>
           <artwork type="ascii-art">
 <![CDATA[
-        <----------- Codestream (image) --------->
-        |                                        |
-        < Extended Header >                      |
-        |                 |                      |
-        +-----+-----+-----+------------//--+-----+-----+---------
-        | SOC | ... | SOD | .............. | EOC |  P  | SOC  ...
-        +-----+-----+-----+------------//--+-----+-----+---------
-        |                                              |
-        |                                              |
-        |                                              |
-        +---------------------+------+-//--+-----------+---------
-Packets |        Main         | Body | ... |    Body   | Main ...
-        +---------------------+------+-//--+-----------+---------
+<--------------- Codestream (image) -------------->
+|                                                 |
+<----- Extended Header ----->                     |
+|                           |                     |
++-----+-//-+-----+-//-+-----+--------//-----+-----+-----+---------
+| SOC | .. | SOT | .. | SOD | ............. | EOC |  P  | SOC  ...
++-----+-//-+-----+-//-+-----+--------//-----+-----+-----+---------
+|          |                                            |
+<----------> Main header                                |
+|                                                       |
++------------------------------+------+--//-+-----------+---------
+|             Main             | Body | ... |    Body   | Main ...
++------------------------------+------+--//-+-----------+---------
+|                              |
+<--------- RTP Packet --------->
 
-        SOC = Start of codestream marker
-        SOD = Start of data marker
-        EOC = End of codestream marker
-        P = (Optional) padding bytes
+SOC = Start of codestream marker
+SOD = Start of data marker
+SOT = Start of tile-part marker
+EOC = End of codestream marker
+P = (Optional) padding bytes
 ]]>
           </artwork>
         </figure>
@@ -292,14 +316,23 @@ Packets |        Main         | Body | ... |    Body   | Main ...
 
         <t>The padding bytes MUST be ignored by the recipient.</t>
 
-        <t>NOTE: Padding bytes can be used to achieve constant bit rate
+        <t>NOTE 1: Padding bytes can be used to achieve constant bit rate
         transmission.</t>
 
-        <t>A JPEG 2000 codestream fragment does not necessarily contain complete
-        JPEG 2000 packets, as defined in <xref target="jpeg2000-1"/>.</t>
+        <t>A JPEG 2000 codestream fragment, and thus an RTP Packet, does not
+        necessarily contain complete JPEG 2000 packets, as defined in <xref
+        target="jpeg2000-1"/>.</t>
 
         <t>A JPEG 2000 codestream Extended Header consists of the bytes between,
         and including, the SOC marker and the first SOD marker.</t>
+
+        <t>NOTE 2: The concept of JPEG 2000 codestream Extended Header is
+        specific to this document, and is distinct from the JPEG 2000 codestream
+        main header which is defined in <xref target="jpeg2000-1"/>. The
+        codestream main header consists of the bytes between, and including, the
+        SOC marker and the first SOT marker. The codestream main header is a
+        subset of the codestream Extended Header (see <xref
+        target="fig-payload-header"/>).</t>
 
         <t>The payload of a Body Packet MUST NOT contain any bytes of the JPEG
         2000 codestream Extended Header.</t>
@@ -525,7 +558,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
 
             <t><tt>TOFF</tt> is the transmission time of this RTP Packet, in the
             timebase of the <tt>timestamp</tt> clock and relative to the first
-            packet with the same <tt>timestamp</tt> value.</t>
+            RTP packet with the same <tt>timestamp</tt> value.</t>
 
             <t><tt>TOFF</tt> = 0 in the first RTP Packet with the same
             <tt>timestamp</tt> value.</t>
@@ -553,8 +586,8 @@ Packets |        Main         | Body | ... |    Body   | Main ...
 
           <dt anchor="def-R">R (Codestream Main Header Reuse)</dt>
           <dd>
-            <t>Determines whether Main Packet and codestream header information
-            can be reused across codestreams.</t>
+            <t>Determines whether Main Packet and codestream main header
+            information can be reused across codestreams.</t>
             <dl newline="true">
               <dt>1</dt>
               <dd>
@@ -857,7 +890,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         </ul>
       </section>
 
-      <section>
+      <section anchor="sec-filtering">
         <name>RTP Packet filtering</name>
         <t>A network agent MAY strip out RTP Packet from a codestream that are
         of no interest to a particular client, e.g., based on a resolution or a
@@ -874,10 +907,10 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         zero).</t>
 
         <t>NOTE: A resync point can be used by a receiver to process a
-        codestream even if earlier packets in the codestream have been
+        codestream even if earlier RTP packets in the codestream have been
         corrupted, lost or deliberately discarded by a network agent. As a
         corollary, resync points can be used by a network agent to discard
-        packets that are not relevant to a given rendering resolution or region
+        RTP packets that are not relevant to a given rendering resolution or region
         of interest. Resync points play a role similar to pointer marker
         segments, albeit tailored for high bandwidth low latency streaming
         applications.</t>
@@ -907,7 +940,7 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         <t>A sender SHOULD set <tt>RES</tt> &gt; 0 whenever possible.</t>
 
         <t>NOTE: While a sender can always safely set <tt>RES</tt> = 0, this
-        makes it more difficult to discard packets based on resolution, as
+        makes it more difficult to discard RTP packets based on resolution, as
         described at <xref target="recv-RES"/>.</t>
       </section>
 
@@ -984,8 +1017,8 @@ Packets |        Main         | Body | ... |    Body   | Main ...
       <section>
         <name>QUAL</name>
 
-        <t>A receiver can discard packets where <tt>QUAL</tt> &gt; N if it is
-        interested in reconstructing an image that only incorporates quality
+        <t>A receiver can discard RTP packets where <tt>QUAL</tt> &gt; N if it
+        is interested in reconstructing an image that only incorporates quality
         layers N and below.</t>
       </section>
 
@@ -1078,9 +1111,9 @@ Packets |        Main         | Body | ... |    Body   | Main ...
         in order to reconstruct the image at quarter resolution (LL2), only
         sub-bands with index greater than 2, e.g., HL3, LH3, HH3, HL4, LH4, HH4,
         etc., are necessary. In other words, a receiver that wishes to
-        reconstruct an image at quarter resolution could discard all packets
-        where <tt>RES</tt> &gt;= 6 since those packets can only contribute to
-        HL1, LH1, HH1, HL2, LH2 and HH2 sub-bands.</t>
+        reconstruct an image at quarter resolution could discard all RTP packets
+        where <tt>RES</tt> &gt;= 6 since those RTP packets can only contribute
+        to HL1, LH1, HH1, HL2, LH2 and HH2 sub-bands.</t>
 
         <t>In the case where all DWT stages consist of both horizontal and
         vertical transforms, the maximum decodable resolution is reduced by a
@@ -1519,6 +1552,16 @@ Packets |        Main         | Body | ... |    Body   | Main ...
  
       <references>
         <name>Informative References</name>
+        <reference anchor="ov2110-0">
+          <front>
+            <title abbrev="SMPTE OV 2110-0">Professional Media Over Managed IP
+            Networks — Roadmap for the 2110 Document Suite</title>
+            <author>
+              <organization>SMPTE</organization>
+            </author>
+            <date year="2018" month="12" day="04"/>
+          </front>
+        </reference>
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.5371.xml"/>
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.4175.xml"/>
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.6838.xml"/>
