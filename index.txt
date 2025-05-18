@@ -831,7 +831,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
          resolution levels.  N_L is the number of decomposition levels
          of the codestream.
 
-   ORDB (Progression Order [Body Packet]
+   ORDB (Progression Order [Body Packet])
       0 
          No resync point is specified for the payload.
 
