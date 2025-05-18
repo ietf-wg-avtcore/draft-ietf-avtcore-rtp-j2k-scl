@@ -762,7 +762,7 @@ P = (Optional) padding bytes
             </dl>
           </dd>
 
-          <dt anchor="def-ORDB">ORDB (Progression Order [Body Packet]</dt>
+          <dt anchor="def-ORDB">ORDB (Progression Order [Body Packet])</dt>
           <dd>
               <dl newline="true">
                 <dt>0</dt>
