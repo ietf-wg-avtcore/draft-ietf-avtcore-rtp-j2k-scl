@@ -1691,18 +1691,6 @@ P = (Optional) padding bytes
       <dl newline="true">
         <dt><tt>NAME</tt></dt>
         <dd>Identifies the pixel format</dd>
-        <dt><tt>COMPS</tt></dt>
-        <dd>
-          <dl>
-            <dt>RGB</dt>
-            <dd>Each codestream contains exactly three components, associated
-            with the R, G and B color channels, in order.</dd>
-            <dt>YCbCr</dt>
-            <dd>Each codestream contains exactly three components, associated
-            with the Y, C<sub>b</sub> and C<sub>r</sub> color channels, in
-            order.</dd>
-          </dl>
-        </dd>
         <dt><tt>SAMP</tt></dt>
         <dd>
           <dl>
@@ -1714,6 +1702,18 @@ P = (Optional) padding bytes
             subsampled horizontally by 1/2.</dd>
             <dt>4:4:4</dt>
             <dd>No color channels are sub-sampled.</dd>
+          </dl>
+        </dd>
+        <dt><tt>COMPS</tt></dt>
+        <dd>
+          <dl>
+            <dt>RGB</dt>
+            <dd>Each codestream contains exactly three components, associated
+            with the R, G and B color channels, in order.</dd>
+            <dt>YCbCr</dt>
+            <dd>Each codestream contains exactly three components, associated
+            with the Y, C<sub>b</sub> and C<sub>r</sub> color channels, in
+            order.</dd>
           </dl>
         </dd>
         <dt><tt>TRANS</tt></dt>
