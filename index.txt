@@ -1515,8 +1515,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
    Change controller
-      IETF Audio/Video Transport Core Maintenance Working Group
-      delegated from the IESG.
+      IETF
 
 10.  Mapping to the Session Description Protocol (SDP)
 
@@ -1561,6 +1560,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
    [jpeg2000-1]
               ITU-T, "Recommendation ITU-T T.800, JPEG 2000 image coding
               system: Core coding system", June 2019.
+
 
 
 
