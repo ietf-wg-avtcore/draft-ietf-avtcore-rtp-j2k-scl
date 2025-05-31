@@ -105,16 +105,18 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
         structures that cannot be emitted until the entire codestream is
         available.</li>
 
-        <li>as in <xref target="RFC4175"/>, the payload header contains an
-        extension (<tt>ESEQ</tt>) to the standard 16-bit RTP sequence number,
-        enabling the payload format to accommodate high data rates without
-        ambiguity. This is necessary as the standard sequence number will roll
-        over very quickly for high data rates likely to be encountered in this
-        application. For example, the standard sequence number will roll over in
-        0.5 seconds with a 1-Gbps video stream with RTP Packet sizes of at least
-        1000 octets, which can be a problem for detecting loss and out-of-order
-        RTP packets particularly in instances where the round-trip time is
-        greater than the roll over period (0.5 seconds in this example).</li>
+        <li>as in <xref target="RFC4175"/>, the payload format defines an
+        extended sequence number, which extends the standard (16-bit) sequence
+        number of the RTP fixed header by storing additional (high-order) bits
+        in the payload header (<tt>ESEQ</tt> field). This enables the payload
+        format to accommodate high data rates without ambiguity, since the
+        standard sequence number will roll over very quickly for high data rates
+        likely to be encountered in this application. For example, the standard
+        sequence number will roll over in 0.5 seconds with a 1-Gbps video stream
+        with RTP Packet sizes of at least 1000 octets, which can be a problem
+        for detecting loss and out-of-order RTP packets particularly in
+        instances where the round-trip time is greater than the roll over period
+        (0.5 seconds in this example).</li>
 
         <li>the payload header optionally contains a temporal offset
         (<tt>PTSTAMP</tt>) relative to the first RTP Packet with the same value
@@ -389,14 +391,15 @@ P = (Optional) padding bytes
 
           <dt anchor="def-seq"><tt>sequence number</tt></dt>
           <dd>
-          <t>The low-order bits of the RTP sequence number.</t>
+          <t>The low-order bits of the extended sequence number.</t>
 
-          <t>The higher order bits of the RTP sequence number are contained in
-          the <tt>ESEQ</tt> field, which is specified at <xref
+          <t>The high-order bits of the extended sequence number are contained
+          in the <tt>ESEQ</tt> field, which is specified at <xref
           target="def-ESEQ"/>.</t>
 
-          <t>The RTP sequence number is calculated as follows:</t>
-          <t><tt>ESEQ * 65536 + sequence number</tt></t></dd>
+          <t>The extended sequence number is calculated as follows:</t>
+          <t><tt>&lt;extended sequence number&gt; = &lt;ESEQ field&gt; * 65536 +
+          &lt;sequence number field of the RTP fixed header&gt;</tt></t></dd>
         </dl>
       </section>
 
@@ -575,12 +578,14 @@ P = (Optional) padding bytes
             nominal transmission time.</t>
           </dd>
 
-          <dt anchor="def-ESEQ">ESEQ (Extended Sequence Number)</dt>
+          <dt anchor="def-ESEQ">ESEQ (Extended Sequence Number High-Order
+          Bits)</dt>
           <dd>
-            <t>The high order bits of the RTP sequence number.</t>
-            <t><xref target="def-seq"/> specifies the low-order bits of the
-            RTP sequence number and the formula to compute the RTP sequence
-            number</t>
+            <t>The high-order bits of the extended sequence number.</t>
+            <t>The low-order bits of the extended sequence number are stored
+            in the <tt>sequence number</tt> field of the RTP fixed header.</t>
+            <t><xref target="def-seq"/> the formula to compute the extended
+            sequence number</t>
           </dd>
 
           <dt anchor="def-R">R (Codestream Main Header Reuse)</dt>
