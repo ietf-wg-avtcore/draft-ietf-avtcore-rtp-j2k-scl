@@ -947,14 +947,14 @@ P = (Optional) padding bytes
         <name>Extra information</name>
         <t>The sender MUST set the value of <tt>XTRAC</tt> to 0.</t>
 
-        <t>Future edition of this specification can permit other values.</t>
+        <t>Future versions of this payload format can permit other values.</t>
       </section>
 
       <section anchor="sec-sender-reserved">
         <name>Reserved values</name>
         <t>The sender MUST set reserved values to 0.</t>
 
-        <t>Future edition of this specification can specify other values such
+        <t>Future versions of this payload format can specify other values such
         that these values can be ignored by receivers that conform to this
         specification.</t>
       </section>
@@ -1199,7 +1199,7 @@ P = (Optional) padding bytes
         ignore the value of <tt>XTRAB</tt>, whose length is given by
         <tt>XTRAC</tt>.</t>
 
-        <t>Future edition of this specification can specify <tt>XTRAB</tt>
+        <t>Future versions of this payload format can specify <tt>XTRAB</tt>
         contents such that this content can be ignored by receivers that conform
         to this specification.</t>
       </section>
