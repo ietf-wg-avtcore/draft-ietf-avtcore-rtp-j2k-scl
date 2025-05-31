@@ -1406,7 +1406,19 @@ P = (Optional) padding bytes
           section="4.8"/>.</dd>
 
           <dt>Security considerations</dt>
-          <dd>See <xref target="sec-sec"/>.</dd>
+          <dd>
+            <t>JPEG 2000 is a flexible image format. As a result, the size of
+            the memory structures required to process JPEG 2000 images can vary
+            greatly depending on the image. For example, the JPEG 2000 syntax
+            allows image height and width up to 2<sup>32</sup> - 1 pixels, which
+            is also captured in the syntax of the <tt>height</tt> and
+            <tt>width</tt> parameters of the media type specified at <xref
+            target="sec-media-type-def"/>. Implementations SHOULD therefore take
+            care when processing input that influences the size of memory
+            structures, and SHOULD fail gracefully when resource constraints are
+            exceeded.</t>
+            <t>See also <xref target="sec-sec"/>.</t>
+          </dd>
 
           <dt>Interoperability considerations</dt>
           <dd>The RTP stream is a sequence of JPEG 2000 images. An
