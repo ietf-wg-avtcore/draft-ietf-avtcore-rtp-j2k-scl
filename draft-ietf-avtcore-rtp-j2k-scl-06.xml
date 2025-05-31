@@ -77,7 +77,7 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       resolution and quality scalability, lossy to lossless coding,
       non-iterative optimal rate control, and high-dynamic range, multi-channel
       and sub-sampled images. These features have made it a mainstay in
-      high-performance applications, including medical geo-spatial, archival,
+      high-performance applications, including medical, geospatial, archival,
       cinema, studio post-production and TV production.</t>
 
       <t>In addition to supporting a variety of frame scanning techniques
