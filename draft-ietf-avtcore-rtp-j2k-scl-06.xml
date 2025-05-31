@@ -135,10 +135,10 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       </ul>
 
       <t>Finally, the payload format also makes use of the unique scalability
-      features of JPEG 2000 to allow a network agent or recipient to discard
-      resolutions levels and/or quality layers merely by inspecting RTP Packet
-      headers (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to parse
-      the underlying codestream (see <xref target="sec-filtering"/>).</t>
+      features of JPEG 2000 to allow an intermediate system or recipient to
+      discard resolutions levels and/or quality layers merely by inspecting RTP
+      Packet headers (<tt>QUAL</tt> and <tt>RES</tt> fields), without having to
+      parse the underlying codestream (see <xref target="sec-filtering"/>).</t>
     </section>
 
     <section>
@@ -891,9 +891,9 @@ P = (Optional) padding bytes
 
       <section anchor="sec-filtering">
         <name>RTP Packet filtering</name>
-        <t>A network agent MAY strip out RTP Packet from a codestream that are
-        of no interest to a particular client, e.g., based on a resolution or a
-        spatial region of interest.</t>
+        <t>An intermediate system MAY strip out RTP Packet from a codestream
+        that are of no interest to a particular client, e.g., based on a
+        resolution or a spatial region of interest.</t>
       </section>
 
       <section>
@@ -907,12 +907,12 @@ P = (Optional) padding bytes
 
         <t>NOTE: A resync point can be used by a receiver to process a
         codestream even if earlier RTP packets in the codestream have been
-        corrupted, lost or deliberately discarded by a network agent. As a
-        corollary, resync points can be used by a network agent to discard
-        RTP packets that are not relevant to a given rendering resolution or region
-        of interest. Resync points play a role similar to pointer marker
-        segments, albeit tailored for high bandwidth low latency streaming
-        applications.</t>
+        corrupted, lost or deliberately discarded by an intermediate system. As
+        a corollary, resync points can be used by an intermediate system to
+        discard RTP packets that are not relevant to a given rendering
+        resolution or region of interest. Resync points play a role similar to
+        pointer marker segments, albeit tailored for high bandwidth low latency
+        streaming applications.</t>
       </section>
 
       <section anchor="sec-sender-ptstamp">
