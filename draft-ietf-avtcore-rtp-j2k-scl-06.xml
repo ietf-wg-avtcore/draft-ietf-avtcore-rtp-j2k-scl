@@ -1459,6 +1459,27 @@ P = (Optional) padding bytes
       <xref target="RFC4855" section="3"/>.</t>
     </section>
 
+    <section anchor="sec-congestion-control">
+      <name>Congestion control</name>
+      <t>Since this RTP payload format can be used in a variety of applications
+      across many different contexts, there is no single congestion control
+      mechanism that will work for all. Below is non-exhaustive list of example
+      mechanisms that can be used:</t>
+      <ul>
+        <li>a sender can offer several alternative streams for given video
+        signal, each with a different data rate corresponding to a different
+        compression ratio;</li>
+        <li>a sender can modulate the data rate within a stream by modulating
+        the resolution, frame rate or compression ratio of the underlying video
+        signal; or</li>
+        <li>an intermediate system can lower the data rate of a stream by
+        discarding resolutions levels and/or quality layers, as specified at
+        <xref target="sec-filtering"/>.</li>
+      </ul>
+      <t>As suggested at <xref target="RFC3550"/>, Section 10, RTCP feedback can
+      be used in the data rate adaptation process.</t>
+    </section>
+
     <section anchor="sec-iana">
       <name>IANA Considerations</name>
         <t>This memo requests that IANA registers the content type specified at
