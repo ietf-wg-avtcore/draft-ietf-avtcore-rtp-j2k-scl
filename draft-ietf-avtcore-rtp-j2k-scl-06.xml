@@ -172,8 +172,12 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
 
       <t>JPEG 2000 codes each image as a standalone codestream. A codestream
       consists of (i) marker segments, which contain coding parameters and
-      metadata, and (ii) coded data. The following marker segments
-      are referenced by this specification:</t>
+      metadata, and (ii) coded data.</t>
+
+      <t>For convenience to the reader, the following lists both the abbreviated
+      and full names of marker segments that are mentioned in this specification
+      (several other marker segments are defined by JPEG 2000 and can be present
+      in a codestream):</t>
 
       <dl>
         <dt>CAP</dt>
