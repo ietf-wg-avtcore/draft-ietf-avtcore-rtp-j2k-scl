@@ -5,8 +5,8 @@
 Audio/Video Transport Core Maintenance                P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
 Intended status: Standards Track                           D. S. Taubman
-Expires: 2 December 2025                   University of New South Wales
-                                                             31 May 2025
+Expires: 4 December 2025                   University of New South Wales
+                                                             2 June 2025
 
 
    RTP Payload Format for sub-codestream latency JPEG 2000 streaming
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 December 2025.
+   This Internet-Draft will expire on 4 December 2025.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 1]
+Lemieux & Taubman        Expires 4 December 2025                [Page 1]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 Table of Contents
@@ -95,23 +95,23 @@ Table of Contents
    10. Mapping to the Session Description Protocol (SDP) . . . . . .  28
    11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  28
    12. Security considerations . . . . . . . . . . . . . . . . . . .  28
-   13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  28
-     13.1.  Normative References . . . . . . . . . . . . . . . . . .  28
+   13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  29
+     13.1.  Normative References . . . . . . . . . . . . . . . . . .  29
      13.2.  Informative References . . . . . . . . . . . . . . . . .  30
    Appendix A.  Pixel formats  . . . . . . . . . . . . . . . . . . .  31
-   Appendix B.  Signal formats . . . . . . . . . . . . . . . . . . .  32
+   Appendix B.  Signal formats . . . . . . . . . . . . . . . . . . .  33
    Appendix C.  Sample formats . . . . . . . . . . . . . . . . . . .  33
-   Appendix D.  Summary of Changes (Informative) . . . . . . . . . .  33
-     D.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  33
-     D.2.  Changes from draft-ietf-avtcore-rtp-j2k-scl-00  . . . . .  33
-     D.3.  Changes from draft-ietf-avtcore-rtp-j2k-scl-01  . . . . .  33
-     D.4.  Changes from draft-ietf-avtcore-rtp-j2k-scl-02  . . . . .  33
+   Appendix D.  Summary of Changes (Informative) . . . . . . . . . .  34
+     D.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  34
+     D.2.  Changes from draft-ietf-avtcore-rtp-j2k-scl-00  . . . . .  34
+     D.3.  Changes from draft-ietf-avtcore-rtp-j2k-scl-01  . . . . .  34
+     D.4.  Changes from draft-ietf-avtcore-rtp-j2k-scl-02  . . . . .  34
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 2]
+Lemieux & Taubman        Expires 4 December 2025                [Page 2]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
@@ -165,9 +165,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 3]
+Lemieux & Taubman        Expires 4 December 2025                [Page 3]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       quickly for high data rates likely to be encountered in this
@@ -221,9 +221,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 4]
+Lemieux & Taubman        Expires 4 December 2025                [Page 4]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    JPEG 2000 represents an image as one or more components, each
@@ -277,9 +277,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 5]
+Lemieux & Taubman        Expires 4 December 2025                [Page 5]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       spatial resolutions of the image come before the information
@@ -333,9 +333,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 6]
+Lemieux & Taubman        Expires 4 December 2025                [Page 6]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    <--------------- Codestream (image) -------------->
@@ -389,9 +389,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 7]
+Lemieux & Taubman        Expires 4 December 2025                [Page 7]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    When concatenated, the sequence of JPEG 2000 codestream fragments
@@ -445,9 +445,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 8]
+Lemieux & Taubman        Expires 4 December 2025                [Page 8]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       The timestamp is the presentation time of the image to which the
@@ -501,9 +501,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025                [Page 9]
+Lemieux & Taubman        Expires 4 December 2025                [Page 9]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    MH (Codestream Main Header Presence)
@@ -557,9 +557,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 10]
+Lemieux & Taubman        Expires 4 December 2025               [Page 10]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       7 
@@ -613,9 +613,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 11]
+Lemieux & Taubman        Expires 4 December 2025               [Page 11]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       NOTE: Only ORDH = 4 and ORDH = 6 allow sub-codestream latency
@@ -669,9 +669,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 12]
+Lemieux & Taubman        Expires 4 December 2025               [Page 12]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
          All Main Packets in this stream, as identified by its SSRC
@@ -725,9 +725,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 13]
+Lemieux & Taubman        Expires 4 December 2025               [Page 13]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
            +===================================+====================+
@@ -781,9 +781,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 14]
+Lemieux & Taubman        Expires 4 December 2025               [Page 14]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    TRANS (Transfer Characteristics)
@@ -837,9 +837,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 15]
+Lemieux & Taubman        Expires 4 December 2025               [Page 15]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       1 
@@ -893,9 +893,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 16]
+Lemieux & Taubman        Expires 4 December 2025               [Page 16]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 6.  JPEG 2000 codestream
@@ -949,9 +949,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 17]
+Lemieux & Taubman        Expires 4 December 2025               [Page 17]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    *  ESEQ; and
@@ -1005,9 +1005,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 18]
+Lemieux & Taubman        Expires 4 December 2025               [Page 18]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    NOTE: While a sender can always safely set RES = 0, this makes it
@@ -1061,9 +1061,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 19]
+Lemieux & Taubman        Expires 4 December 2025               [Page 19]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    *  if the code-block conforms to [jpeg2000-15], contains an HT
@@ -1117,9 +1117,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 20]
+Lemieux & Taubman        Expires 4 December 2025               [Page 20]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    +===============+============+=============+===========+============+
@@ -1173,9 +1173,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 21]
+Lemieux & Taubman        Expires 4 December 2025               [Page 21]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    The decoding process reconstructs the image by reversing the coding
@@ -1229,9 +1229,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 22]
+Lemieux & Taubman        Expires 4 December 2025               [Page 22]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    +===============+============+=============+===========+============+
@@ -1285,9 +1285,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 23]
+Lemieux & Taubman        Expires 4 December 2025               [Page 23]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    Future edition of this specification can specify XTRAB contents such
@@ -1341,9 +1341,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 24]
+Lemieux & Taubman        Expires 4 December 2025               [Page 24]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 9.2.  Definition
@@ -1397,9 +1397,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 25]
+Lemieux & Taubman        Expires 4 December 2025               [Page 25]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
       width
@@ -1453,9 +1453,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
 
 
-Lemieux & Taubman        Expires 2 December 2025               [Page 26]
+Lemieux & Taubman        Expires 4 December 2025               [Page 26]
 
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
          The application that defines the absolute-URI MUST associate it
@@ -1480,7 +1480,17 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
       [RFC6838].
 
    Security considerations
-      See Section 12.
+      JPEG 2000 is a flexible image format.  As a result, the size of
+      the memory structures required to process JPEG 2000 images can
+      vary greatly depending on the image.  For example, the JPEG 2000
+      syntax allows image height and width up to 2^32 - 1 pixels, which
+      is also captured in the syntax of the height and width parameters
+      of the media type specified at Section 9.2.  Implementations
+      SHOULD therefore take care when processing input that influences
+      the size of memory structures, and SHOULD fail gracefully when
+      resource constraints are exceeded.
+
+      See also Section 12.
 
    Interoperability considerations
       The RTP stream is a sequence of JPEG 2000 images.  An
@@ -1496,6 +1506,14 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
    Person and email address to contact for further information
       Pierre-Anthony Lemieux <pal@sandflow.com>
 
+
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 27]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
+
    Intended usage
       COMMON
 
@@ -1506,13 +1524,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 
    Author
       Pierre-Anthony Lemieux (mailto:pal@sandflow.com)
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 27]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
 
    Change controller
       IETF
@@ -1550,6 +1561,15 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
    denial-of-service threat due to the receipt of pathological data.
    Nor does the RTP payload format contain any active content.
 
+
+
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 28]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
+
    Security considerations related to the JPEG 2000 codestream contained
    in the payload are discussed at Section 3 of [RFC3745].
 
@@ -1560,15 +1580,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
    [jpeg2000-1]
               ITU-T, "Recommendation ITU-T T.800, JPEG 2000 image coding
               system: Core coding system", June 2019.
-
-
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 28]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
 
    [jpeg2000-2]
               ITU-T, "Recommendation ITU-T T.801, JPEG 2000 image coding
@@ -1606,6 +1617,15 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
               RFC 3986, DOI 10.17487/RFC3986, January 2005,
               <https://www.rfc-editor.org/info/rfc3986>.
 
+
+
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 29]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
+
    [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234,
               DOI 10.17487/RFC5234, January 2008,
@@ -1615,16 +1635,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
-
-
-
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 29]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -1665,6 +1675,13 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
               RFC 3711, DOI 10.17487/RFC3711, March 2004,
               <https://www.rfc-editor.org/info/rfc3711>.
 
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 30]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
+
    [RFC5124]  Ott, J. and E. Carrara, "Extended Secure RTP Profile for
               Real-time Transport Control Protocol (RTCP)-Based Feedback
               (RTP/SAVPF)", RFC 5124, DOI 10.17487/RFC5124, February
@@ -1673,14 +1690,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
    [RFC7201]  Westerlund, M. and C. Perkins, "Options for Securing RTP
               Sessions", RFC 7201, DOI 10.17487/RFC7201, April 2014,
               <https://www.rfc-editor.org/info/rfc7201>.
-
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 30]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
 
    [RFC7202]  Perkins, C. and M. Westerlund, "Securing the RTP
               Framework: Why RTP Does Not Mandate a Single Media
@@ -1699,6 +1708,35 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
 Appendix A.  Pixel formats
 
    Table 4 defines pixel formats.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 31]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
 
     +=============+=======+=======+=======+=======+===+=====+=========+
     | NAME        | SAMP  | COMPS | TRANS | PRIMS |MAT| VFR | Mapping |
@@ -1730,14 +1768,6 @@ Appendix A.  Pixel formats
 
                        Table 4: Defined pixel formats
 
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 31]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
-
    Each pixel format is characterized by the following:
 
    NAME
@@ -1755,6 +1785,14 @@ Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
    COMPS
       RGB  Each codestream contains exactly three components, associated
          with the R, G and B color channels, in order.
+
+
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 32]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
 
       YCbCr  Each codestream contains exactly three components,
          associated with the Y, C_b and C_r color channels, in order.
@@ -1785,15 +1823,6 @@ Appendix B.  Signal formats
       consist of an alternating sequence of first segment and second
       segment.
 
-
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 32]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
-
    tff
       Interlaced stream.  The stream MUST only consist of an alternating
       sequence of first field and second field, where the first line of
@@ -1811,6 +1840,15 @@ Appendix C.  Sample formats
 
    10
       All components consist of unsigned 10-bit integer samples.
+
+
+
+
+
+Lemieux & Taubman        Expires 4 December 2025               [Page 33]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
 
    12
       All components consist of unsigned 12-bit integer samples.
@@ -1842,14 +1880,6 @@ D.3.  Changes from draft-ietf-avtcore-rtp-j2k-scl-01
 
 D.4.  Changes from draft-ietf-avtcore-rtp-j2k-scl-02
 
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 33]
-
-Internet-Draft     Sub-codestream latency J2K over RTP          May 2025
-
-
    *  Removed request for registration in the deprecated IANA registry
       for RTP Payload Format MIME types.
 
@@ -1871,34 +1901,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Lemieux & Taubman        Expires 2 December 2025               [Page 34]
+Lemieux & Taubman        Expires 4 December 2025               [Page 34]
