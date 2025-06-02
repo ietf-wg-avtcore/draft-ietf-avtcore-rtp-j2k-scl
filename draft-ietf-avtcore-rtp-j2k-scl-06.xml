@@ -170,9 +170,37 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
       <t>An image can be further divided into contiguous rectangular tiles that
       are each independently coded and decoded.</t>
 
-      <t>JPEG 2000 codes each image as a standalone codestream. Each codestream
+      <t>JPEG 2000 codes each image as a standalone codestream. A codestream
       consists of (i) marker segments, which contain coding parameters and
       metadata, and (ii) coded data.</t>
+
+      <t>For convenience to the reader, the following lists both the abbreviated
+      and full names of marker segments that are mentioned in this specification
+      (several other marker segments are defined by JPEG 2000 and can be present
+      in a codestream):</t>
+
+      <dl>
+        <dt>CAP</dt>
+        <dd>Extended Capabilities</dd>
+        <dt>COC</dt>
+        <dd>Coding style component</dd>
+        <dt>COD</dt>
+        <dd>Coding style default</dd>
+        <dt>COM</dt>
+        <dd>Comment</dd>
+        <dt>EOC</dt>
+        <dd>End of codestream</dd>
+        <dt>PLM</dt>
+        <dd>Packet length, main header</dd>
+        <dt>PLT</dt>
+        <dd>Packet length, tile-part header</dd>
+        <dt>SOC</dt>
+        <dd>Start of codestream</dd>
+        <dt>SOD</dt>
+        <dd>Start of data</dd>
+        <dt>SOT</dt>
+        <dd>Start of tile-part</dd>
+      </dl>
 
       <t>The codestream starts with an SOC marker segment and ends with an EOC
       marker segment. The main header of the codestream consists of marker
@@ -252,7 +280,8 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
 
         <figure anchor="fig-payload-header">
           <name>Packetization of a sequence of JPEG 2000 codestreams (not to
-          scale).</name>
+          scale). See <xref target="sec-media-description"/> for an expansion of
+          the SOC, SOD, SOT and EOC abbreviations.</name>
           <artwork type="ascii-art">
 <![CDATA[
 <--------------- Codestream (image) -------------->
@@ -271,10 +300,6 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
 |                              |
 <--------- RTP Packet --------->
 
-SOC = Start of codestream marker
-SOD = Start of data marker
-SOT = Start of tile-part marker
-EOC = End of codestream marker
 P = (Optional) padding bytes
 ]]>
           </artwork>
@@ -590,8 +615,8 @@ P = (Optional) padding bytes
             <dl newline="true">
               <dt>1</dt>
               <dd>
-                <t>All Main Packets in this stream, as identified by its
-                <tt>SSRC</tt> value:</t>
+                <t>All Main Packets in this stream, as identified by the value
+                of the <tt>SSRC</tt> field in the RTP Fixed Header:</t>
                 <ul>
                   <li>MUST have identical Main Packet Payload Headers, with the
                   exception of their <tt>TP</tt>, <tt>MH</tt>, <tt>ESEQ</tt> and
@@ -1038,8 +1063,8 @@ P = (Optional) padding bytes
               <th>Decomposition level</th>
               <th>Resolution level</th>
               <th>Sub-bands</th>
-              <th>Keep all Body Packets with RES equal to or less than this
-              value...</th>
+              <th>Keep all Body Packets with <tt>RES</tt> equal to or less than
+              this value...</th>
               <th>... to decode an image with at most these dimensions</th>
             </tr>
           </thead>
