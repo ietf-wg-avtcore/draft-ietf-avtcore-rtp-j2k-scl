@@ -56,8 +56,8 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
     <abstract>
       <t>This RTP payload format defines the streaming of a video signal encoded
       as a sequence of JPEG 2000 codestreams. The format allows sub-codestream
-      latency, such that the first RTP packet for a given codestream can be
-      emitted before the entire codestream is available.</t>
+      latency, such that the first RTP packet for a given image can be emitted
+      before the entire image is available to, or encoded by, the sender.</t>
     </abstract>
   </front>
 
