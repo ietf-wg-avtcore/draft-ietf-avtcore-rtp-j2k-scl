@@ -78,7 +78,7 @@ Table of Contents
      7.4.  PTSTAMP field . . . . . . . . . . . . . . . . . . . . . .  18
      7.5.  RES field . . . . . . . . . . . . . . . . . . . . . . . .  18
      7.6.  Extra information . . . . . . . . . . . . . . . . . . . .  19
-     7.7.  Reserved values . . . . . . . . . . . . . . . . . . . . .  19
+     7.7.  Unassigned values . . . . . . . . . . . . . . . . . . . .  19
      7.8.  Extension values  . . . . . . . . . . . . . . . . . . . .  19
      7.9.  Code-block caching  . . . . . . . . . . . . . . . . . . .  19
    8.  Receiver  . . . . . . . . . . . . . . . . . . . . . . . . . .  20
@@ -86,7 +86,7 @@ Table of Contents
      8.2.  QUAL  . . . . . . . . . . . . . . . . . . . . . . . . . .  20
      8.3.  RES . . . . . . . . . . . . . . . . . . . . . . . . . . .  20
      8.4.  Extra information . . . . . . . . . . . . . . . . . . . .  23
-     8.5.  Reserved values . . . . . . . . . . . . . . . . . . . . .  24
+     8.5.  Unassigned values . . . . . . . . . . . . . . . . . . . .  24
      8.6.  Extension values  . . . . . . . . . . . . . . . . . . . .  24
      8.7.  Code-block caching  . . . . . . . . . . . . . . . . . . .  24
    9.  Media Type  . . . . . . . . . . . . . . . . . . . . . . . . .  24
@@ -771,7 +771,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
          R MUST be equal to 1.
 
    RSVD (Reserved)
-      Reserved value.  See Section 8.5 and Section 7.7.
+      Unassigned value.  See Section 8.5 and Section 7.7.
 
    RANGE (Video Full Range Usage)
       Value of the VideoFullRangeFlag specified in [rec-itu-t-h273]
@@ -1018,15 +1018,18 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    The sender MUST set the value of XTRAC to 0.
 
-   Future edition of this specification can permit other values.
+   Future updates to this RTP payload format can permit other values.
 
-7.7.  Reserved values
+7.7.  Unassigned values
 
-   The sender MUST set reserved values to 0.
+   The sender MUST set unassigned values to 0.
 
-   Future edition of this specification can specify other values such
-   that these values can be ignored by receivers that conform to this
-   specification.
+   Unassigned values are available for assignment by future updates to
+   this RTP payload format.  As specified at Section 8.5 these future
+   assigned values are ignored by receivers that conform to this
+   specification.  In contrast with extension values (Section 7.8, this
+   mechanism allows updates to this RTP payload format that remain
+   compatible with receivers that conform to this specification.
 
 7.8.  Extension values
 
@@ -1055,9 +1058,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    *  it does not contribute code-bytes as specified in the parent JPEG
       2000 packet header; or
-
-
-
 
 
 
@@ -1290,13 +1290,14 @@ Lemieux & Taubman        Expires 5 December 2025               [Page 23]
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
-   Future edition of this specification can specify XTRAB contents such
-   that this content can be ignored by receivers that conform to this
-   specification.
+   Future updates to this RTP payload format can specify XTRAB contents
+   such that this content can be ignored by receivers that conform to
+   this specification.
 
-8.5.  Reserved values
+8.5.  Unassigned values
 
-   The receiver MUST ignore the value of reserved values.
+   The receiver MUST ignore unassigned values (see additional discussion
+   at Section 7.7).
 
 8.6.  Extension values
 
@@ -1334,7 +1335,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    This RTP payload format is identified using the media type defined at
    Section 9.2, which is registered in accordance with [RFC4855] and
    using the template of [RFC6838].
-
 
 
 
