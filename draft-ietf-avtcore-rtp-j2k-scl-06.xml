@@ -1476,7 +1476,7 @@ P = (Optional) padding bytes
         discarding resolutions levels and/or quality layers, as specified at
         <xref target="sec-filtering"/>.</li>
       </ul>
-      <t>As suggested at <xref target="RFC3550"/>, Section 10, RTCP feedback can
+      <t>As suggested at <xref target="RFC3550" sectionFormat="of" section="10"/> RTCP feedback can
       be used in the data rate adaptation process.</t>
     </section>
 
