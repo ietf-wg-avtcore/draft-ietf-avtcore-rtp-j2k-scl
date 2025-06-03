@@ -1470,7 +1470,7 @@ P = (Optional) padding bytes
         signal, each with a different data rate corresponding to a different
         compression ratio;</li>
         <li>a sender can modulate the data rate within a stream by modulating
-        the resolution, frame rate or compression ratio of the underlying video
+        the resolution, frame rate, or compression ratio of the underlying video
         signal; or</li>
         <li>an intermediate system can lower the data rate of a stream by
         discarding resolutions levels and/or quality layers, as specified at
