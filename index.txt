@@ -156,12 +156,12 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
       structures that cannot be emitted until the entire codestream is
       available.
 
-   *  as in [RFC4175], the payload header contains an extension (ESEQ)
-      to the standard 16-bit RTP sequence number, enabling the payload
-      format to accommodate high data rates without ambiguity.  This is
-      necessary as the standard sequence number will roll over very
-      quickly for high data rates likely to be encountered in this
-      application.  For example, the standard sequence number will roll
+   *  as in [RFC4175], the payload format defines an extended sequence
+      number, which extends the standard (16-bit) sequence number of the
+      RTP fixed header by storing additional (high-order) bits in the
+      payload header (ESEQ field).  This enables the payload format to
+      accommodate high data rates without ambiguity, since the standard
+      sequence number will roll over very quickly for high data rates
 
 
 
@@ -170,11 +170,12 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 3]
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
-      over in 0.5 seconds with a 1-Gbps video stream with RTP Packet
-      sizes of at least 1000 octets, which can be a problem for
-      detecting loss and out-of-order RTP packets particularly in
-      instances where the round-trip time is greater than the roll over
-      period (0.5 seconds in this example).
+      likely to be encountered in this application.  For example, the
+      standard sequence number will roll over in 0.5 seconds with a
+      1-Gbps video stream with RTP Packet sizes of at least 1000 octets,
+      which can be a problem for detecting loss and out-of-order RTP
+      packets particularly in instances where the round-trip time is
+      greater than the roll over period (0.5 seconds in this example).
 
    *  the payload header optionally contains a temporal offset (PTSTAMP)
       relative to the first RTP Packet with the same value of RTP
@@ -216,7 +217,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    capabilities defined in any part of the JPEG 2000 family of
    standards, including those specified in [jpeg2000-2] and
    [jpeg2000-15].
-
 
 
 
@@ -481,20 +481,20 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
       timestamp of all RTP packets of a given image MUST be equal.
 
    sequence number
-      The low-order bits of the RTP sequence number.
+      The low-order bits of the extended sequence number.
 
-      The higher order bits of the RTP sequence number are contained in
-      the ESEQ field, which is specified at Section 5.3.
+      The high-order bits of the extended sequence number are contained
+      in the ESEQ field, which is specified at Section 5.3.
 
-      The RTP sequence number is calculated as follows:
+      The extended sequence number is calculated as follows:
 
-      ESEQ * 65536 + sequence number
+      <extended sequence number> = <ESEQ field> * 65536 + <sequence
+      number field of the RTP fixed header>
 
 5.3.  Main Packet Payload Header
 
    Figure 2 specifies the structure of the payload header.  Fields are
    interpreted as unsigned binary integers in network order.
-
 
 
 
@@ -679,11 +679,13 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
       packet is transmitted at a time other than its nominal
       transmission time.
 
-   ESEQ (Extended Sequence Number)
-      The high order bits of the RTP sequence number.
+   ESEQ (Extended Sequence Number High-Order Bits)
+      The high-order bits of the extended sequence number.
 
-      Section 5.2 specifies the low-order bits of the RTP sequence
-      number and the formula to compute the RTP sequence number
+      The low-order bits of the extended sequence number are stored in
+      the sequence number field of the RTP fixed header.
+
+      Section 5.2 the formula to compute the extended sequence number
 
    R (Codestream Main Header Reuse)
       Determines whether Main Packet and codestream main header
@@ -718,8 +720,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
          The codestream components MUST conform to one of the
          combinations at Table 1.
-
-
 
 
 
