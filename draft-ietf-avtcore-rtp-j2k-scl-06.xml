@@ -716,8 +716,8 @@ P = (Optional) padding bytes
           </dd>
 
           <dt anchor="def-RSVD">RSVD (Reserved)</dt>
-          <dd>Reserved value. See <xref target="sec-receiver-reserved"/> and
-          <xref target="sec-sender-reserved"/>.</dd>
+          <dd>Unassigned value. See <xref target="sec-receiver-unassigned"/> and
+          <xref target="sec-sender-unassigned"/>.</dd>
 
           <dt anchor="def-F">RANGE (Video Full Range Usage)</dt>
           <dd>Value of the VideoFullRangeFlag specified in <xref
@@ -972,16 +972,21 @@ P = (Optional) padding bytes
         <name>Extra information</name>
         <t>The sender MUST set the value of <tt>XTRAC</tt> to 0.</t>
 
-        <t>Future edition of this specification can permit other values.</t>
+        <t>Future updates to this RTP payload format can permit other
+        values.</t>
       </section>
 
-      <section anchor="sec-sender-reserved">
-        <name>Reserved values</name>
-        <t>The sender MUST set reserved values to 0.</t>
+      <section anchor="sec-sender-unassigned">
+        <name>Unassigned values</name>
+        <t>The sender MUST set unassigned values to 0.</t>
 
-        <t>Future edition of this specification can specify other values such
-        that these values can be ignored by receivers that conform to this
-        specification.</t>
+        <t>Unassigned values are available for assignment by future updates to
+        this RTP payload format. As specified at <xref
+        target="sec-receiver-unassigned"/> these future assigned values are
+        ignored by receivers that conform to this specification. In contrast
+        with extension values (<xref target="sec-sender-ext"/>, this mechanism
+        allows updates to this RTP payload format that remain compatible with
+        receivers that conform to this specification.</t>
       </section>
 
       <section anchor="sec-sender-ext">
@@ -1224,14 +1229,15 @@ P = (Optional) padding bytes
         ignore the value of <tt>XTRAB</tt>, whose length is given by
         <tt>XTRAC</tt>.</t>
 
-        <t>Future edition of this specification can specify <tt>XTRAB</tt>
+        <t>Future updates to this RTP payload format can specify <tt>XTRAB</tt>
         contents such that this content can be ignored by receivers that conform
         to this specification.</t>
       </section>
 
-      <section anchor="sec-receiver-reserved">
-        <name>Reserved values</name>
-        <t>The receiver MUST ignore the value of reserved values.</t>
+      <section anchor="sec-receiver-unassigned">
+        <name>Unassigned values</name>
+        <t>The receiver MUST ignore unassigned values (see additional discussion
+        at <xref target="sec-sender-unassigned"/>).</t>
       </section>
 
       <section anchor="sec-receiver-ext">
