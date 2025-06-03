@@ -63,11 +63,11 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
    2.  Requirements Language . . . . . . . . . . . . . . . . . . . .   4
    3.  Media format description  . . . . . . . . . . . . . . . . . .   4
-   4.  Video signal description  . . . . . . . . . . . . . . . . . .   7
+   4.  Video signal description  . . . . . . . . . . . . . . . . . .   6
    5.  Payload Format  . . . . . . . . . . . . . . . . . . . . . . .   7
      5.1.  General . . . . . . . . . . . . . . . . . . . . . . . . .   7
      5.2.  RTP Fixed Header Usage  . . . . . . . . . . . . . . . . .   9
-     5.3.  Main Packet Payload Header  . . . . . . . . . . . . . . .  10
+     5.3.  Main Packet Payload Header  . . . . . . . . . . . . . . .   9
      5.4.  Body Packet Payload Header  . . . . . . . . . . . . . . .  15
    6.  JPEG 2000 codestream  . . . . . . . . . . . . . . . . . . . .  17
      6.1.  General . . . . . . . . . . . . . . . . . . . . . . . . .  17
@@ -102,10 +102,10 @@ Table of Contents
    Appendix A.  Pixel formats  . . . . . . . . . . . . . . . . . . .  32
    Appendix B.  Signal formats . . . . . . . . . . . . . . . . . . .  33
    Appendix C.  Sample formats . . . . . . . . . . . . . . . . . . .  33
-   Appendix D.  Summary of Changes (Informative) . . . . . . . . . .  34
-     D.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  34
-     D.2.  Changes from draft-ietf-avtcore-rtp-j2k-scl-00  . . . . .  34
-     D.3.  Changes from draft-ietf-avtcore-rtp-j2k-scl-01  . . . . .  34
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
+
+
+
 
 
 
@@ -113,9 +113,6 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 2]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-     D.4.  Changes from draft-ietf-avtcore-rtp-j2k-scl-02  . . . . .  34
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
 
 1.  Introduction
 
@@ -162,6 +159,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    *  as in [RFC4175], the payload header contains an extension (ESEQ)
       to the standard 16-bit RTP sequence number, enabling the payload
       format to accommodate high data rates without ambiguity.  This is
+      necessary as the standard sequence number will roll over very
+      quickly for high data rates likely to be encountered in this
+      application.  For example, the standard sequence number will roll
 
 
 
@@ -170,9 +170,6 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 3]
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
-      necessary as the standard sequence number will roll over very
-      quickly for high data rates likely to be encountered in this
-      application.  For example, the standard sequence number will roll
       over in 0.5 seconds with a 1-Gbps video stream with RTP Packet
       sizes of at least 1000 octets, which can be a problem for
       detecting loss and out-of-order RTP packets particularly in
@@ -215,7 +212,10 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    The following summarizes the structure of the JPEG 2000 codestream,
    which is specified in detail at [jpeg2000-1].
 
-
+   NOTE: as described at Section 6, a JPEG 2000 codestream allows
+   capabilities defined in any part of the JPEG 2000 family of
+   standards, including those specified in [jpeg2000-2] and
+   [jpeg2000-15].
 
 
 
@@ -225,11 +225,6 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 4]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-   NOTE: as described at Section 6, a JPEG 2000 codestream allows
-   capabilities defined in any part of the JPEG 2000 family of
-   standards, including those specified in [jpeg2000-2] and
-   [jpeg2000-15].
 
    JPEG 2000 represents an image as one or more components, each
    uniformly sampled on a common rectangular reference grid.  For
@@ -270,18 +265,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    SOT  Start of tile-part
 
-
-
-
-
-
-
-
-Lemieux & Taubman        Expires 5 December 2025                [Page 5]
-
-Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
-
-
    The codestream starts with an SOC marker segment and ends with an EOC
    marker segment.  The main header of the codestream consists of marker
    segments between the SOC and first SOT marker segment and contains
@@ -290,6 +273,14 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    The rest of the codestream consists of additional marker segments
    (tile-part headers) interleaved with coded image data.
+
+
+
+
+Lemieux & Taubman        Expires 5 December 2025                [Page 5]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
 
    At the heart of JPEG 2000 coding is the wavelet transform, which
    decomposes the image into successive resolution levels, with each
@@ -331,19 +322,21 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    reconstruct the higher spatial resolutions.  This progression order
    is particular useful for sub-frame latency operations.
 
-
-
-Lemieux & Taubman        Expires 5 December 2025                [Page 6]
-
-Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
-
-
 4.  Video signal description
 
    This RTP payload format supports three distinct video frame scanning
    techniques:
 
    *  Progressive frame
+
+
+
+
+
+Lemieux & Taubman        Expires 5 December 2025                [Page 6]
+
+Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
+
 
    *  Interlaced frame, where each frame consists of two fields.  Field
       1 occurs temporarily before Field 2.  The height in lines of each
@@ -386,6 +379,13 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    Each RTP packet, as specified at [RFC3550], is either a Main Packet
    or a Body Packet.
 
+   A Main Packet consists of the following ordered sequence of
+   structures concatenated without gaps:
+
+   *  the RTP Fixed Header;
+
+   *  a Main Packet Payload Header, as specified at Section 5.3; and
+
 
 
 
@@ -393,13 +393,6 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 7]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-   A Main Packet consists of the following ordered sequence of
-   structures concatenated without gaps:
-
-   *  the RTP Fixed Header;
-
-   *  a Main Packet Payload Header, as specified at Section 5.3; and
 
    *  the payload, which consists of a JPEG 2000 codestream fragment.
 
@@ -441,6 +434,13 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    The payload of a Body Packet MUST NOT contain any bytes of the JPEG
    2000 codestream Extended Header.
 
+   The payload of a Main Packet MUST contain at least one byte of the
+   JPEG 2000 codestream Extended Header and MAY contain bytes other than
+   those of the JPEG 2000 codestream Extended Header.
+
+   A payload MUST NOT contain bytes from more than one JPEG 2000
+   codestream.
+
 
 
 
@@ -449,13 +449,6 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 8]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-   The payload of a Main Packet MUST contain at least one byte of the
-   JPEG 2000 codestream Extended Header and MAY contain bytes other than
-   those of the JPEG 2000 codestream Extended Header.
-
-   A payload MUST NOT contain bytes from more than one JPEG 2000
-   codestream.
 
 5.2.  RTP Fixed Header Usage
 
@@ -497,6 +490,13 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
       ESEQ * 65536 + sequence number
 
+5.3.  Main Packet Payload Header
+
+   Figure 2 specifies the structure of the payload header.  Fields are
+   interpreted as unsigned binary integers in network order.
+
+
+
 
 
 
@@ -505,11 +505,6 @@ Lemieux & Taubman        Expires 5 December 2025                [Page 9]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-5.3.  Main Packet Payload Header
-
-   Figure 2 specifies the structure of the payload header.  Fields are
-   interpreted as unsigned binary integers in network order.
 
     0                   1                   2                   3
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -553,6 +548,11 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
          Field 1 of an interlaced frame, where the first line of the
          field is the first line of the frame.
 
+      2 
+         Field 2 of an interlaced frame, where the first line of the
+         field is the second line of the frame.
+
+
 
 
 
@@ -561,10 +561,6 @@ Lemieux & Taubman        Expires 5 December 2025               [Page 10]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-      2 
-         Field 2 of an interlaced frame, where the first line of the
-         field is the second line of the frame.
 
       3 
          Field 1 of an interlaced frame, where the first line of the
@@ -608,6 +604,10 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
          first resync point is specified in every Body Packet that
          contains one or more resync points.
 
+      4 
+         The progression order is PCRL for the entire codestream.  The
+         first resync point is specified in every Body Packet that
+         contains one or more resync points.
 
 
 
@@ -617,11 +617,6 @@ Lemieux & Taubman        Expires 5 December 2025               [Page 11]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-      4 
-         The progression order is PCRL for the entire codestream.  The
-         first resync point is specified in every Body Packet that
-         contains one or more resync points.
 
       5 
          The progression order is CPRL for the entire codestream.  The
@@ -666,6 +661,11 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
       TOFF = 0 in the first RTP Packet with the same timestamp value.
 
+      PTSTAMP = 0, if P = 0 in the Main Packet of this codestream.
+
+      NOTE: As described at Section 7.4 and Section 8.1, PTSTAMP is
+      intended to improve clock recovery at the receiver and only
+      applies when the transmission time of two consecutive RTP packets
 
 
 
@@ -674,11 +674,6 @@ Lemieux & Taubman        Expires 5 December 2025               [Page 12]
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
-      PTSTAMP = 0, if P = 0 in the Main Packet of this codestream.
-
-      NOTE: As described at Section 7.4 and Section 8.1, PTSTAMP is
-      intended to improve clock recovery at the receiver and only
-      applies when the transmission time of two consecutive RTP packets
       with identical timestamp fields differ by no more than 45 ms =
       4095/90,000.  [RFC5450] addresses the general case when a RTP
       packet is transmitted at a time other than its nominal
@@ -721,6 +716,11 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
          Component colorimetry is specified by the PRIMS, TRANS and MAT
          and RANGE fields.
 
+         The codestream components MUST conform to one of the
+         combinations at Table 1.
+
+
+
 
 
 
@@ -729,9 +729,6 @@ Lemieux & Taubman        Expires 5 December 2025               [Page 13]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-         The codestream components MUST conform to one of the
-         combinations at Table 1.
 
            +===================================+====================+
            | Combination name                  | Component index    |
@@ -778,6 +775,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    PRIMS (Color Primaries)
       One of the ColourPrimaries values specified in [rec-itu-t-h273]
+
+
+
 
 
 
@@ -1859,33 +1859,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    16
       All components consist of unsigned 16-bit integer samples.
 
-Appendix D.  Summary of Changes (Informative)
-
-D.1.  Introduction
-
-   This Appendix summarizes substantive changes across revisions of this
-   specification.  This summary is informative and not intended to be
-   exhaustive.
-
-D.2.  Changes from draft-ietf-avtcore-rtp-j2k-scl-00
-
-   *  Allow multi-tile images in a single stream, in addition to
-      allowing multi-tile images to be transmitted as multiple single-
-      tile streams.
-
-   *  Fix incorrect TRANS values.
-
-D.3.  Changes from draft-ietf-avtcore-rtp-j2k-scl-01
-
-   *  Removed signaling for the transmission of multi-tile images as
-      multiple single-tile image streams (the tile media type
-      parameter).
-
-D.4.  Changes from draft-ietf-avtcore-rtp-j2k-scl-02
-
-   *  Removed request for registration in the deprecated IANA registry
-      for RTP Payload Format MIME types.
-
 Authors' Addresses
 
    Pierre-Anthony Lemieux (editor)
@@ -1893,17 +1866,6 @@ Authors' Addresses
    San Mateo, CA
    United States of America
    Email: pal@sandflow.com
-
-
-
-
-
-
-
-
-Lemieux & Taubman        Expires 5 December 2025               [Page 34]
-
-Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    David Scott Taubman
@@ -1939,22 +1901,4 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Lemieux & Taubman        Expires 5 December 2025               [Page 35]
+Lemieux & Taubman        Expires 5 December 2025               [Page 34]
