@@ -1466,7 +1466,7 @@ P = (Optional) padding bytes
       mechanism that will work for all. Below is a non-exhaustive list of example
       mechanisms that can be used:</t>
       <ul>
-        <li>a sender can offer several alternative streams for given video
+        <li>a sender can offer several alternative streams for a given video
         signal, each with a different data rate corresponding to a different
         compression ratio;</li>
         <li>a sender can modulate the data rate within a stream by modulating
