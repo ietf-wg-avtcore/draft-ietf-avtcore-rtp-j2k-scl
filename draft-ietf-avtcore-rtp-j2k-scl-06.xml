@@ -1463,7 +1463,7 @@ P = (Optional) padding bytes
       <name>Congestion control</name>
       <t>Since this RTP payload format can be used in a variety of applications
       across many different contexts, there is no single congestion control
-      mechanism that will work for all. Below is non-exhaustive list of example
+      mechanism that will work for all. Below is a non-exhaustive list of example
       mechanisms that can be used:</t>
       <ul>
         <li>a sender can offer several alternative streams for given video
