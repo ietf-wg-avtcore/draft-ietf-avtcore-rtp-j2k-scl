@@ -1839,45 +1839,5 @@ P = (Optional) padding bytes
       </dl>
     </section>
 
-    <section anchor="sec-summary-of-changes">
-      <name>Summary of Changes (Informative)</name>
-
-      <section anchor="sec-summary-of-changes-intro">
-        <name>Introduction</name>
-        <t>This Appendix summarizes substantive changes across revisions of this
-        specification. This summary is informative and not intended to be
-        exhaustive.</t>
-      </section>
-
-			<section anchor="sec-soc-draft-ietf-avtcore-rtp-j2k-scl-00">
-				<name>Changes from <tt>draft-ietf-avtcore-rtp-j2k-scl-00</tt></name>
-
-        <ul>
-          <li>Allow multi-tile images in a single stream, in addition to
-          allowing multi-tile images to be transmitted as multiple single-tile
-          streams.</li>
-          <li>Fix incorrect <tt>TRANS</tt> values.</li>
-        </ul>
-			</section>
-
-      <section anchor="sec-soc-draft-ietf-avtcore-rtp-j2k-scl-01">
-				<name>Changes from <tt>draft-ietf-avtcore-rtp-j2k-scl-01</tt></name>
-
-        <ul>
-          <li>Removed signaling for the transmission of multi-tile images as
-          multiple single-tile image streams (the <tt>tile</tt> media type
-          parameter).</li>
-        </ul>
-			</section>
-
-      <section anchor="sec-soc-draft-ietf-avtcore-rtp-j2k-scl-02">
-				<name>Changes from <tt>draft-ietf-avtcore-rtp-j2k-scl-02</tt></name>
-
-        <ul>
-          <li>Removed request for registration in the deprecated IANA registry
-          for RTP Payload Format MIME types.</li>
-        </ul>
-			</section>
-    </section>
   </back>
 </rfc>
