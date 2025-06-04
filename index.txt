@@ -339,7 +339,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
    *  Interlaced frame, where each frame consists of two fields.  Field
-      1 occurs temporarily before Field 2.  The height in lines of each
+      1 occurs temporally before Field 2.  The height in lines of each
       field is half the height of the image.
 
    *  Progressive segmented frame (PsF), where each frame consists of
