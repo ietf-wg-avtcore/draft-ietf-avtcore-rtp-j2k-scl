@@ -1216,9 +1216,9 @@ P = (Optional) padding bytes
           </tbody>
         </table>
 
-        <t><xref target="t-res-lx-example"/> illustrates the case where some of
-        DWT stage consist of only horizontal transforms, as specified at Annex F
-        of <xref target="jpeg2000-2"/>.</t>
+        <t><xref target="t-res-lx-example"/> illustrates the case where some DWT
+        stages consist of only horizontal transforms, as specified at Annex F of
+        <xref target="jpeg2000-2"/>.</t>
 
         <t>A receiver can therefore discard all Body Packets where <tt>RES</tt> is
         greater than some threshold value if it is interested in decoding an
