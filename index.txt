@@ -5,8 +5,8 @@
 Audio/Video Transport Core Maintenance                P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
 Intended status: Standards Track                           D. S. Taubman
-Expires: 6 December 2025                   University of New South Wales
-                                                             4 June 2025
+Expires: 13 December 2025                  University of New South Wales
+                                                            11 June 2025
 
 
    RTP Payload Format for sub-codestream latency JPEG 2000 streaming
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 December 2025.
+   This Internet-Draft will expire on 13 December 2025.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 1]
+Lemieux & Taubman       Expires 13 December 2025                [Page 1]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 2]
+Lemieux & Taubman       Expires 13 December 2025                [Page 2]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -165,7 +165,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 3]
+Lemieux & Taubman       Expires 13 December 2025                [Page 3]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -221,7 +221,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 4]
+Lemieux & Taubman       Expires 13 December 2025                [Page 4]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -277,7 +277,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 5]
+Lemieux & Taubman       Expires 13 December 2025                [Page 5]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -333,7 +333,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 6]
+Lemieux & Taubman       Expires 13 December 2025                [Page 6]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -389,7 +389,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 7]
+Lemieux & Taubman       Expires 13 December 2025                [Page 7]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -445,7 +445,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 8]
+Lemieux & Taubman       Expires 13 December 2025                [Page 8]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -501,7 +501,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025                [Page 9]
+Lemieux & Taubman       Expires 13 December 2025                [Page 9]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -557,7 +557,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 10]
+Lemieux & Taubman       Expires 13 December 2025               [Page 10]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -613,7 +613,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 11]
+Lemieux & Taubman       Expires 13 December 2025               [Page 11]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -669,7 +669,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 12]
+Lemieux & Taubman       Expires 13 December 2025               [Page 12]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -725,7 +725,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 13]
+Lemieux & Taubman       Expires 13 December 2025               [Page 13]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -781,7 +781,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 14]
+Lemieux & Taubman       Expires 13 December 2025               [Page 14]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -837,7 +837,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 15]
+Lemieux & Taubman       Expires 13 December 2025               [Page 15]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -893,7 +893,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 16]
+Lemieux & Taubman       Expires 13 December 2025               [Page 16]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -949,7 +949,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 17]
+Lemieux & Taubman       Expires 13 December 2025               [Page 17]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1005,7 +1005,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 18]
+Lemieux & Taubman       Expires 13 December 2025               [Page 18]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1061,7 +1061,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 19]
+Lemieux & Taubman       Expires 13 December 2025               [Page 19]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1117,7 +1117,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 20]
+Lemieux & Taubman       Expires 13 December 2025               [Page 20]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1173,7 +1173,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 21]
+Lemieux & Taubman       Expires 13 December 2025               [Page 21]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1229,7 +1229,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 22]
+Lemieux & Taubman       Expires 13 December 2025               [Page 22]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1268,7 +1268,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
      case where N_L = 5 and some DWT stages consist of only horizontal
        transforms.  The image has nominal width and height of W x H.
 
-   Table 3 illustrates the case where some of DWT stage consist of only
+   Table 3 illustrates the case where some DWT stages consist of only
    horizontal transforms, as specified at Annex F of [jpeg2000-2].
 
    A receiver can therefore discard all Body Packets where RES is
@@ -1285,7 +1285,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 23]
+Lemieux & Taubman       Expires 13 December 2025               [Page 23]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1341,7 +1341,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 24]
+Lemieux & Taubman       Expires 13 December 2025               [Page 24]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1397,7 +1397,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 25]
+Lemieux & Taubman       Expires 13 December 2025               [Page 25]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1453,7 +1453,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 26]
+Lemieux & Taubman       Expires 13 December 2025               [Page 26]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1509,7 +1509,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 27]
+Lemieux & Taubman       Expires 13 December 2025               [Page 27]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1565,7 +1565,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 28]
+Lemieux & Taubman       Expires 13 December 2025               [Page 28]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1621,7 +1621,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 29]
+Lemieux & Taubman       Expires 13 December 2025               [Page 29]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1677,7 +1677,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 30]
+Lemieux & Taubman       Expires 13 December 2025               [Page 30]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1733,7 +1733,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 31]
+Lemieux & Taubman       Expires 13 December 2025               [Page 31]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1789,7 +1789,7 @@ Appendix A.  Pixel formats
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 32]
+Lemieux & Taubman       Expires 13 December 2025               [Page 32]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1845,7 +1845,7 @@ Appendix C.  Sample formats
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 33]
+Lemieux & Taubman       Expires 13 December 2025               [Page 33]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
@@ -1901,4 +1901,4 @@ Authors' Addresses
 
 
 
-Lemieux & Taubman        Expires 6 December 2025               [Page 34]
+Lemieux & Taubman       Expires 13 December 2025               [Page 34]
