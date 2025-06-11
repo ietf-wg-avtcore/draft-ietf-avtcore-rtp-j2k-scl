@@ -870,40 +870,37 @@ P = (Optional) padding bytes
 
     <section anchor="sec-codestream">
       <name>JPEG 2000 codestream</name>
-      <section>
-        <name>General</name>
-        <t> A JPEG 2000 codestream consists of the bytes between, and including,
-        the SOC and EOC markers, as defined in <xref target="jpeg2000-1"/>.</t>
 
-        <t>The JPEG 2000 codestream MAY include capabilities beyond those
-        specified at <xref target="jpeg2000-1"/>, including those specified in
-        <xref target="jpeg2000-2"/> and <xref target="jpeg2000-15"/>.</t>
+      <t> A JPEG 2000 codestream consists of the bytes between, and including,
+      the SOC and EOC markers, as defined in <xref target="jpeg2000-1"/>.</t>
 
-        <t>NOTE: The <tt>Rsiz</tt> parameter and <tt>CAP</tt> marker segments of
-        each JPEG 2000 codestream contain detailed information on the
-        capabilities necessary to decode the codestream.</t>
+      <t>The JPEG 2000 codestream MAY include capabilities beyond those
+      specified at <xref target="jpeg2000-1"/>, including those specified in
+      <xref target="jpeg2000-2"/> and <xref target="jpeg2000-15"/>.</t>
 
-        <t>NOTE: The <tt>caps</tt> media type parameter defined in
-        <xref target="sec-media-type-def"/> allows applications to signal
-        required device capabilities.</t>
+      <t>NOTE: The <tt>Rsiz</tt> parameter and <tt>CAP</tt> marker segments of
+      each JPEG 2000 codestream contain detailed information on the
+      capabilities necessary to decode the codestream.</t>
 
-        <t>NOTE: The block coder specified at <xref target="jpeg2000-15"/>
-        improves throughput and reduces latency compared to the original
-        arithmetic block coder defined in <xref target="jpeg2000-1"/>.</t>
+      <t>NOTE: The <tt>caps</tt> media type parameter defined in
+      <xref target="sec-media-type-def"/> allows applications to signal
+      required device capabilities.</t>
 
-        <t>For interlaced or progressive segmented frames, the height specified
-        in the JPEG 2000 main header MUST be the height in lines of the field or
-        the segment, respectively.</t>
+      <t>NOTE: The block coder specified at <xref target="jpeg2000-15"/>
+      improves throughput and reduces latency compared to the original
+      arithmetic block coder defined in <xref target="jpeg2000-1"/>.</t>
 
-        <t>If any decomposition level involves only horizontal decomposition
-        then no decomposition level MUST involve only vertical decomposition;
-        and conversely, if any decomposition level involves only vertical
-        decomposition then no decomposition level MUST involve only horizontal
-        decomposition.</t>
-      </section>
+      <t>For interlaced or progressive segmented frames, the height specified
+      in the JPEG 2000 main header MUST be the height in lines of the field or
+      the segment, respectively.</t>
+
+      <t>If any decomposition level involves only horizontal decomposition
+      then no decomposition level MUST involve only vertical decomposition;
+      and conversely, if any decomposition level involves only vertical
+      decomposition then no decomposition level MUST involve only horizontal
+      decomposition.</t>
 
     </section>
-
 
     <section anchor="sec-sender">
       <name>Sender requirements</name>
