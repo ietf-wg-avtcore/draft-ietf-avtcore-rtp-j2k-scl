@@ -239,7 +239,7 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-06" xml:lang="en" version="3">
         <dd>The first lines of the image come before the last lines of the
         image.</dd>
         <dt>Component (C)</dt>
-        <dd>The first component of the image come before the last component of
+        <dd>The first component of the image comes before the last component of
         the image.</dd>
         <dt>Resolution Level (R)</dt>
         <dd>The information needed to reconstruct the lower spatial resolutions
