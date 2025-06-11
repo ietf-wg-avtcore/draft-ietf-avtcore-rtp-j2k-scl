@@ -81,7 +81,7 @@ Table of Contents
      7.7.  Unassigned values . . . . . . . . . . . . . . . . . . . .  19
      7.8.  Extension values  . . . . . . . . . . . . . . . . . . . .  19
      7.9.  Code-block caching  . . . . . . . . . . . . . . . . . . .  19
-   8.  Receiver  . . . . . . . . . . . . . . . . . . . . . . . . . .  20
+   8.  Receiver requirements . . . . . . . . . . . . . . . . . . . .  20
      8.1.  PTSTAMP . . . . . . . . . . . . . . . . . . . . . . . . .  20
      8.2.  QUAL  . . . . . . . . . . . . . . . . . . . . . . . . . .  20
      8.3.  RES . . . . . . . . . . . . . . . . . . . . . . . . . . .  20
@@ -1074,7 +1074,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    to achieve a constant bit rate even when a code-block does not
    contribute code-bytes, as suggested at [jpeg2000-15], F.4.
 
-8.  Receiver
+8.  Receiver requirements
 
 8.1.  PTSTAMP
 
