@@ -1039,7 +1039,7 @@ P = (Optional) padding bytes
     </section>
 
     <section anchor="sec-receiver">
-      <name>Receiver</name>
+      <name>Receiver requirements</name>
 
       <section anchor="sec-recv-ptstamp">
         <name>PTSTAMP</name>
