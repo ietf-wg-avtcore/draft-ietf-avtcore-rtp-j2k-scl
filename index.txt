@@ -934,8 +934,8 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 7.1.  Main Packet
 
-   Only Main Packets MAY contain bytes of the JPEG 2000 codestream
-   Extended Header.
+   A Main Packet MAY contain zero or more bytes of the JPEG 2000
+   codestream Extended Header.
 
    The sender MUST either emit a single Main Packet with MH = 3, or one
    or more Main Packets with MH = 1 followed by a single Main Packet
