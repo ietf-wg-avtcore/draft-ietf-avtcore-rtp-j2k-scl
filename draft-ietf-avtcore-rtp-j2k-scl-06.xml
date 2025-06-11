@@ -903,8 +903,8 @@ P = (Optional) padding bytes
       <section>
         <name>Main Packet</name>
 
-        <t>Only Main Packets MAY contain bytes of the JPEG 2000 codestream
-        Extended Header.</t>
+        <t>A Main Packet MAY contain zero or more bytes of the JPEG 2000
+        codestream Extended Header.</t>
 
         <t>The sender MUST either emit a single Main Packet with <tt>MH</tt> =
         3, or one or more Main Packets with <tt>MH</tt> = 1 followed by a
