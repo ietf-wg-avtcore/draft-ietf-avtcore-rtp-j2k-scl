@@ -70,13 +70,12 @@ Table of Contents
      5.3.  Main Packet Payload Header  . . . . . . . . . . . . . . .  10
      5.4.  Body Packet Payload Header  . . . . . . . . . . . . . . .  15
    6.  JPEG 2000 codestream  . . . . . . . . . . . . . . . . . . . .  17
-     6.1.  General . . . . . . . . . . . . . . . . . . . . . . . . .  17
    7.  Sender requirements . . . . . . . . . . . . . . . . . . . . .  17
      7.1.  Main Packet . . . . . . . . . . . . . . . . . . . . . . .  17
      7.2.  RTP Packet filtering  . . . . . . . . . . . . . . . . . .  18
      7.3.  Resync point  . . . . . . . . . . . . . . . . . . . . . .  18
      7.4.  PTSTAMP field . . . . . . . . . . . . . . . . . . . . . .  18
-     7.5.  RES field . . . . . . . . . . . . . . . . . . . . . . . .  19
+     7.5.  RES field . . . . . . . . . . . . . . . . . . . . . . . .  18
      7.6.  Extra information . . . . . . . . . . . . . . . . . . . .  19
      7.7.  Unassigned values . . . . . . . . . . . . . . . . . . . .  19
      7.8.  Extension values  . . . . . . . . . . . . . . . . . . . .  19
@@ -103,6 +102,7 @@ Table of Contents
    Appendix B.  Signal formats . . . . . . . . . . . . . . . . . . .  33
    Appendix C.  Sample formats . . . . . . . . . . . . . . . . . . .  33
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
+
 
 
 
@@ -903,8 +903,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 6.  JPEG 2000 codestream
 
-6.1.  General
-
    A JPEG 2000 codestream consists of the bytes between, and including,
    the SOC and EOC markers, as defined in [jpeg2000-1].
 
@@ -947,14 +945,14 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    The Main Packet Payload Headers fields MUST be identical in all Main
    Packet of a given codestream, with the exception of:
 
+   *  MH;
+
 
 
 Lemieux & Taubman       Expires 13 December 2025               [Page 17]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-   *  MH;
 
    *  ESEQ; and
 
@@ -999,7 +997,9 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    for two consecutive RTP packets with identical timestamp fields MUST
    NOT differ by more than 4095.
 
+7.5.  RES field
 
+   A sender SHOULD set RES > 0 whenever possible.
 
 
 
@@ -1009,10 +1009,6 @@ Lemieux & Taubman       Expires 13 December 2025               [Page 18]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-7.5.  RES field
-
-   A sender SHOULD set RES > 0 whenever possible.
 
    NOTE: While a sender can always safely set RES = 0, this makes it
    more difficult to discard RTP packets based on resolution, as
@@ -1058,6 +1054,10 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    the sender doesn't know exactly when the receiver started processing
    the stream, etc.
 
+   A code-block is _empty_ if:
+
+   *  it does not contribute code-bytes as specified in the parent JPEG
+      2000 packet header; or
 
 
 
@@ -1065,11 +1065,6 @@ Lemieux & Taubman       Expires 13 December 2025               [Page 19]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
-
-   A code-block is _empty_ if:
-
-   *  it does not contribute code-bytes as specified in the parent JPEG
-      2000 packet header; or
 
    *  if the code-block conforms to [jpeg2000-15], contains an HT
       cleanup segment and the first two bytes of the Magsgn byte-stream
@@ -1096,6 +1091,11 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    The JPEG 2000 coding process decomposes an image using a sequence of
    discrete wavelet transforms (DWT) stages.
+
+
+
+
+
 
 
 
