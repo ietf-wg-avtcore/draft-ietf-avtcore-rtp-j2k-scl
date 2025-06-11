@@ -408,11 +408,13 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    When concatenated, the sequence of JPEG 2000 codestream fragments
    emitted by the sender MUST be a sequence of JPEG 2000 codestreams
    where two successive JPEG 2000 codestreams MAY be separated by one or
-   more arbitrary padding bytes (see Figure 1).
+   more padding bytes (see Figure 1).
+
+   The sender MUST set the value of each padding byte to zero.
+
+   The receiver MUST ignore the values of the padding bytes.
 
    The JPEG 2000 codestreams MUST conform to Section 6.
-
-   The padding bytes MUST be ignored by the recipient.
 
    NOTE 1: Padding bytes can be used to achieve constant bit rate
    transmission.
@@ -440,8 +442,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    A payload MUST NOT contain bytes from more than one JPEG 2000
    codestream.
-
-
 
 
 
