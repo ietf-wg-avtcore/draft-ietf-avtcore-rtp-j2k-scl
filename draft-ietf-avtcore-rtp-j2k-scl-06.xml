@@ -335,12 +335,14 @@ P = (Optional) padding bytes
         <t>When concatenated, the sequence of JPEG 2000 codestream fragments
         emitted by the sender MUST be a sequence of JPEG 2000 codestreams where
         two successive JPEG 2000 codestreams MAY be separated by one or more
-        arbitrary padding bytes (see <xref target="fig-payload-header"/>).</t>
+        padding bytes (see <xref target="fig-payload-header"/>).</t>
+
+        <t>The sender MUST set the value of each padding byte to zero.</t>
+
+        <t>The receiver MUST ignore the values of the padding bytes.</t>
 
         <t>The JPEG 2000 codestreams MUST conform to <xref
         target="sec-codestream"/>.</t>
-
-        <t>The padding bytes MUST be ignored by the recipient.</t>
 
         <t>NOTE 1: Padding bytes can be used to achieve constant bit rate
         transmission.</t>
