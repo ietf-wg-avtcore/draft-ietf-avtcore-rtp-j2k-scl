@@ -870,8 +870,6 @@ P = (Optional) padding bytes
 
     <section anchor="sec-codestream">
       <name>JPEG 2000 codestream</name>
-      <section>
-        <name>General</name>
         <t> A JPEG 2000 codestream consists of the bytes between, and including,
         the SOC and EOC markers, as defined in <xref target="jpeg2000-1"/>.</t>
 
@@ -900,10 +898,8 @@ P = (Optional) padding bytes
         and conversely, if any decomposition level involves only vertical
         decomposition then no decomposition level MUST involve only horizontal
         decomposition.</t>
-      </section>
 
     </section>
-
 
     <section anchor="sec-sender">
       <name>Sender requirements</name>
