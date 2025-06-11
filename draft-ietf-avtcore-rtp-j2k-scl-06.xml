@@ -895,7 +895,7 @@ P = (Optional) padding bytes
 
         <t>If any decomposition level involves only horizontal decomposition
         then no decomposition level MUST involve only vertical decomposition;
-        and conversely, if any decomposition level involves only vertical
+        and, conversely, if any decomposition level involves only vertical
         decomposition then no decomposition level MUST involve only horizontal
         decomposition.</t>
 
