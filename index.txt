@@ -1558,7 +1558,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 12.  IANA Considerations
 
-   This memo requests that IANA registers the content type specified at
+   This memo requests that IANA registers the media type specified at
    Section 9.
 
 
