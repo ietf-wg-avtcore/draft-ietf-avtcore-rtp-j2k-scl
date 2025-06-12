@@ -125,12 +125,12 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    This RTP payload format specifies the streaming of a video signal
    encoded as a sequence of JPEG 2000 codestreams (see Section 3 for a
    primer on the structure of JPEG 2000 codestreams).  JPEG 2000 is a
-   flexible image codec that support resolution and quality scalability,
-   lossy to lossless coding, non-iterative optimal rate control, and
-   high-dynamic range, multi-channel and sub-sampled images.  These
-   features have made it a mainstay in high-performance applications,
-   including medical, geospatial, archival, cinema, studio post-
-   production and TV production.
+   flexible image codec that supports resolution and quality
+   scalability, lossy to lossless coding, non-iterative optimal rate
+   control, and high-dynamic range, multi-channel and sub-sampled
+   images.  These features have made it a mainstay in high-performance
+   applications, including medical, geospatial, archival, cinema, studio
+   post-production and TV production.
 
    In addition to supporting a variety of frame scanning techniques
    (progressive, interlaced and progressive segmented frame) and image
