@@ -1415,11 +1415,9 @@ P = (Optional) padding bytes
   uri-list = absolute-URI *(";" absolute-URI)
                 </sourcecode>
 
-                <t>Each <tt>absolute-URI</tt> MUST NOT contain any <tt>";"</tt>
-                character.</t>
-
                 <t>The application that defines the <tt>absolute-URI</tt> MUST
-                associate it with a set of constraints to which the stream
+                ensure that it does not contain any <tt>";"</tt> character and
+                MUST associate it with a set of constraints to which the stream
                 conforms. Such constraints can, for example, include the maximum
                 height and width of images.</t>
 
