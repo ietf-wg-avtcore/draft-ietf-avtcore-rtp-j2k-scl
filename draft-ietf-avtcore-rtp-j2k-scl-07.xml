@@ -267,8 +267,8 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-07" xml:lang="en" version="3">
       <ul>
         <li>Progressive frame</li>
         <li>Interlaced frame, where each frame consists of two fields. Field 1
-        occurs temporally before Field 2. The height in lines of each field is
-        half the height of the image.</li>
+        occurs earlier in time than Field 2. The height in lines of each field
+        is half the height of the image.</li>
         <li>Progressive segmented frame (PsF), where each frame consists of two
         segments. Segment 1 contains the odd lines (1, 3, 5, 7,...) of a frame
         and Segment 2 contains the even lines (2, 4, 6, 8,...) of the same
