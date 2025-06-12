@@ -346,8 +346,8 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    *  Progressive frame
 
    *  Interlaced frame, where each frame consists of two fields.  Field
-      1 occurs temporally before Field 2.  The height in lines of each
-      field is half the height of the image.
+      1 occurs earlier in time than Field 2.  The height in lines of
+      each field is half the height of the image.
 
    *  Progressive segmented frame (PsF), where each frame consists of
       two segments.  Segment 1 contains the odd lines (1, 3, 5, 7,...)
@@ -1448,7 +1448,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
            uri-list = absolute-URI *(";" absolute-URI)
 
-         Each absolute-URI MUST NOT contain any ";" character.
+
 
 
 
@@ -1458,7 +1458,8 @@ Lemieux & Taubman       Expires 14 December 2025               [Page 26]
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
-         The application that defines the absolute-URI MUST associate it
+         The application that defines the absolute-URI MUST ensure that
+         it does not contain any ";" character and MUST associate it
          with a set of constraints to which the stream conforms.  Such
          constraints can, for example, include the maximum height and
          width of images.
@@ -1505,7 +1506,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
    Person and email address to contact for further information
       Pierre-Anthony Lemieux <pal@sandflow.com>
-
 
 
 
