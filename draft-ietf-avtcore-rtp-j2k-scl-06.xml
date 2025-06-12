@@ -1522,7 +1522,7 @@ P = (Optional) padding bytes
 
     <section anchor="sec-iana">
       <name>IANA Considerations</name>
-        <t>This memo requests that IANA registers the content type specified at
+        <t>This memo requests that IANA registers the media type specified at
         <xref target="sec-media-type"/>.</t>
     </section>
 
