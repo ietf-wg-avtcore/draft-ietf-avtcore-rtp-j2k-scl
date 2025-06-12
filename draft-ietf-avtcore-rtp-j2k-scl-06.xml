@@ -1404,7 +1404,7 @@ P = (Optional) padding bytes
 
               <dt><tt>caps</tt></dt>
               <dd>
-                <t>The parameters contains a list of sets of constraints to
+                <t>The parameter contains a list of sets of constraints to
                 which the stream conforms, with each set of constraints
                 identified using an <tt>absolute-URI</tt> defined by an
                 application.</t>
