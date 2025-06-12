@@ -73,7 +73,7 @@ docName="draft-ietf-avtcore-rtp-j2k-scl-07" xml:lang="en" version="3">
       <t>This RTP payload format specifies the streaming of a video signal
       encoded as a sequence of JPEG 2000 codestreams (see <xref
       target="sec-media-description"/> for a primer on the structure of JPEG
-      2000 codestreams). JPEG 2000 is a flexible image codec that support
+      2000 codestreams). JPEG 2000 is a flexible image codec that supports
       resolution and quality scalability, lossy to lossless coding,
       non-iterative optimal rate control, and high-dynamic range, multi-channel
       and sub-sampled images. These features have made it a mainstay in
