@@ -93,14 +93,14 @@ Table of Contents
      9.2.  Definition  . . . . . . . . . . . . . . . . . . . . . . .  25
    10. Mapping to the Session Description Protocol (SDP) . . . . . .  28
    11. Congestion control  . . . . . . . . . . . . . . . . . . . . .  28
-   12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  28
+   12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  29
    13. Security considerations . . . . . . . . . . . . . . . . . . .  29
    14. References  . . . . . . . . . . . . . . . . . . . . . . . . .  29
      14.1.  Normative References . . . . . . . . . . . . . . . . . .  29
      14.2.  Informative References . . . . . . . . . . . . . . . . .  30
    Appendix A.  Pixel formats  . . . . . . . . . . . . . . . . . . .  32
    Appendix B.  Signal formats . . . . . . . . . . . . . . . . . . .  33
-   Appendix C.  Sample formats . . . . . . . . . . . . . . . . . . .  33
+   Appendix C.  Sample formats . . . . . . . . . . . . . . . . . . .  34
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
 
 
@@ -1483,13 +1483,14 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    Security considerations
       JPEG 2000 is a flexible image format.  As a result, the size of
       the memory structures required to process JPEG 2000 images can
-      vary greatly depending on the image.  For example, the JPEG 2000
-      syntax allows image height and width up to 2^32 - 1 pixels, which
-      is also captured in the syntax of the height and width parameters
-      of the media type specified at Section 9.2.  Implementations
-      SHOULD therefore take care when processing input that influences
-      the size of memory structures, and SHOULD fail gracefully when
-      resource constraints are exceeded.
+      vary greatly depending on the characteristics of the image and the
+      encoding parameters.  For example, the JPEG 2000 syntax allows
+      image height and width up to 2^32 - 1 pixels, which is also
+      captured in the syntax of the height and width parameters of the
+      media type specified at Section 9.2.  Implementations SHOULD
+      therefore take care when processing input that influences the size
+      of memory structures, and SHOULD fail gracefully when resource
+      constraints are exceeded.
 
       See also Section 13.
 
@@ -1504,8 +1505,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    Applications that use this media type
       video streaming and communication
 
-   Person and email address to contact for further information
-      Pierre-Anthony Lemieux <pal@sandflow.com>
+
 
 
 
@@ -1513,6 +1513,9 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 27]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+   Person and email address to contact for further information
+      Pierre-Anthony Lemieux <pal@sandflow.com>
 
    Intended usage
       COMMON
@@ -1556,10 +1559,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    As suggested at Section 10 of [RFC3550] RTCP feedback can be used in
    the data rate adaptation process.
 
-12.  IANA Considerations
 
-   This memo requests that IANA registers the media type specified at
-   Section 9.
 
 
 
@@ -1569,6 +1569,11 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 28]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+12.  IANA Considerations
+
+   This memo requests that IANA registers the media type specified at
+   Section 9.
 
 13.  Security considerations
 
@@ -1611,11 +1616,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
               ITU-T, "Recommendation ITU-T T.814, JPEG 2000 image coding
               system: High-throughput JPEG 2000", June 2019.
 
-   [rec-itu-t-h273]
-              ITU-T, "Recommendation ITU-T H.273, Coding-independent
-              code points for video signal type identification", July
-              2021.
-
 
 
 
@@ -1625,6 +1625,11 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 29]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+   [rec-itu-t-h273]
+              ITU-T, "Recommendation ITU-T H.273, Coding-independent
+              code points for video signal type identification", July
+              2021.
 
    [jpeg2000-9]
               ITU-T, "JPEG 2000 image coding system: Interactivity
@@ -1668,11 +1673,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    [ov2110-0] SMPTE, "Professional Media Over Managed IP Networks,
               Roadmap for the 2110 Document Suite", 4 December 2018.
 
-   [RFC5371]  Futemma, S., Itakura, E., and A. Leung, "RTP Payload
-              Format for JPEG 2000 Video Streams", RFC 5371,
-              DOI 10.17487/RFC5371, October 2008,
-              <https://www.rfc-editor.org/info/rfc5371>.
-
 
 
 
@@ -1681,6 +1681,11 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 30]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+   [RFC5371]  Futemma, S., Itakura, E., and A. Leung, "RTP Payload
+              Format for JPEG 2000 Video Streams", RFC 5371,
+              DOI 10.17487/RFC5371, October 2008,
+              <https://www.rfc-editor.org/info/rfc5371>.
 
    [RFC4175]  Gharai, L. and C. Perkins, "RTP Payload Format for
               Uncompressed Video", RFC 4175, DOI 10.17487/RFC4175,
@@ -1726,17 +1731,16 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
               DOI 10.17487/RFC3745, April 2004,
               <https://www.rfc-editor.org/info/rfc3745>.
 
-   [RFC5450]  Singer, D. and H. Desineni, "Transmission Time Offsets in
-              RTP Streams", RFC 5450, DOI 10.17487/RFC5450, March 2009,
-              <https://www.rfc-editor.org/info/rfc5450>.
-
-
 
 
 Lemieux & Taubman       Expires 15 December 2025               [Page 31]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+   [RFC5450]  Singer, D. and H. Desineni, "Transmission Time Offsets in
+              RTP Streams", RFC 5450, DOI 10.17487/RFC5450, March 2009,
+              <https://www.rfc-editor.org/info/rfc5450>.
 
 Appendix A.  Pixel formats
 
@@ -1782,10 +1786,6 @@ Appendix A.  Pixel formats
          and vertically by 1/2.
 
       4:2:2  The C_b and C_r color channels are subsampled horizontally
-         by 1/2.
-
-      4:4:4  No color channels are sub-sampled.
-
 
 
 
@@ -1793,6 +1793,10 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 32]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+         by 1/2.
+
+      4:4:4  No color channels are sub-sampled.
 
    COMPS
       RGB  Each codestream contains exactly three components, associated
@@ -1837,10 +1841,6 @@ Appendix B.  Signal formats
       sequence of first field and second field, where the first line of
       the first field is the second line of the frame.
 
-Appendix C.  Sample formats
-
-   8 
-      All components consist of unsigned 8-bit integer samples.
 
 
 
@@ -1849,6 +1849,11 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 33]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+Appendix C.  Sample formats
+
+   8 
+      All components consist of unsigned 8-bit integer samples.
 
    10
       All components consist of unsigned 10-bit integer samples.
@@ -1873,11 +1878,6 @@ Authors' Addresses
    Sydney
    Australia
    Email: d.taubman@unsw.edu.au
-
-
-
-
-
 
 
 
