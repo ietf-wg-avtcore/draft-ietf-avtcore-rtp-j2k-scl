@@ -690,7 +690,8 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
       The low-order bits of the extended sequence number are stored in
       the sequence number field of the RTP fixed header.
 
-      Section 5.2 the formula to compute the extended sequence number
+      Section 5.2 specifies the formula to compute the extended sequence
+      number
 
    R (Codestream Main Header Reuse): 1 bit
       Determines whether Main Packet and codestream main header
@@ -720,8 +721,7 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
          PRIMS, TRANS and MAT and RANGE MUST be zero.
 
       1 
-         Component colorimetry is specified by the PRIMS, TRANS and MAT
-         and RANGE fields.
+
 
 
 
@@ -729,6 +729,9 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 13]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+         Component colorimetry is specified by the PRIMS, TRANS and MAT
+         and RANGE fields.
 
          The codestream components MUST conform to one of the
          combinations at Table 1.
@@ -776,15 +779,15 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    RANGE (Video Full Range Usage): 1 bit
       Value of the VideoFullRangeFlag specified in [rec-itu-t-h273]
 
-   PRIMS (Color Primaries): 8 bits
-      One of the ColourPrimaries values specified in [rec-itu-t-h273]
-
 
 
 Lemieux & Taubman       Expires 15 December 2025               [Page 14]
 
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
+
+   PRIMS (Color Primaries): 8 bits
+      One of the ColourPrimaries values specified in [rec-itu-t-h273]
 
    TRANS (Transfer Characteristics): 8 bits
       One of the TransferCharacteristics values specified in
@@ -832,9 +835,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
          resolution levels.  N_L is the number of decomposition levels
          of the codestream.
 
-   ORDB (Progression Order [Body Packet]): 1 bit
-
-
 
 
 Lemieux & Taubman       Expires 15 December 2025               [Page 15]
@@ -842,6 +842,7 @@ Lemieux & Taubman       Expires 15 December 2025               [Page 15]
 Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
 
 
+   ORDB (Progression Order [Body Packet]): 1 bit
       0 
          No resync point is specified for the payload.
 
@@ -889,7 +890,6 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
       from more than one precinct.
 
       PID MUST be 0 if ORDB = 0.
-
 
 
 
