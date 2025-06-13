@@ -1447,10 +1447,11 @@ P = (Optional) padding bytes
           <dd>
             <t>JPEG 2000 is a flexible image format. As a result, the size of
             the memory structures required to process JPEG 2000 images can vary
-            greatly depending on the image. For example, the JPEG 2000 syntax
-            allows image height and width up to 2<sup>32</sup> - 1 pixels, which
-            is also captured in the syntax of the <tt>height</tt> and
-            <tt>width</tt> parameters of the media type specified at <xref
+            greatly depending on the characteristics of the image and the
+            encoding parameters. For example, the JPEG 2000 syntax allows image
+            height and width up to 2<sup>32</sup> - 1 pixels, which is also
+            captured in the syntax of the <tt>height</tt> and <tt>width</tt>
+            parameters of the media type specified at <xref
             target="sec-media-type-def"/>. Implementations SHOULD therefore take
             care when processing input that influences the size of memory
             structures, and SHOULD fail gracefully when resource constraints are
