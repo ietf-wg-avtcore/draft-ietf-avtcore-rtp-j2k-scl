@@ -613,10 +613,11 @@ P = (Optional) padding bytes
           8 bits</dt>
           <dd>
             <t>The high-order bits of the extended sequence number.</t>
-            <t>The low-order bits of the extended sequence number are stored
-            in the <tt>sequence number</tt> field of the RTP fixed header.</t>
+            <t>NOTE: The low-order bits of the extended sequence number are
+            stored in the <tt>sequence number</tt> field of the RTP fixed
+            header.</t>
             <t><xref target="def-seq"/> specifies the formula to compute the
-            extended sequence number</t>
+            extended sequence number.</t>
           </dd>
 
           <dt anchor="def-R">R (Codestream Main Header Reuse): 1 bit</dt>
