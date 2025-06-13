@@ -687,11 +687,11 @@ Internet-Draft     Sub-codestream latency J2K over RTP         June 2025
    ESEQ (Extended Sequence Number High-Order Bits): 8 bits
       The high-order bits of the extended sequence number.
 
-      The low-order bits of the extended sequence number are stored in
-      the sequence number field of the RTP fixed header.
+      NOTE: The low-order bits of the extended sequence number are
+      stored in the sequence number field of the RTP fixed header.
 
       Section 5.2 specifies the formula to compute the extended sequence
-      number
+      number.
 
    R (Codestream Main Header Reuse): 1 bit
       Determines whether Main Packet and codestream main header
